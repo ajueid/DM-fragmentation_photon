@@ -1,0 +1,127 @@
+# BEGIN PLOT
+DrawOnly=/REF/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/pythia-manual.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/professor.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T3.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T4.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T5.yoda/DELPHI_1996_S3430090/d36-x01-y02
+Title=Mean $\pi^0$ multiplicity
+RatioPlotReference=/REF/DELPHI_1996_S3430090/d36-x01-y02
+RatioPlot=0
+LogY=0
+XLabel=
+ShowZero=0
+YLabel=Multiplicity
+Legend=1
+LegendXPos=0.1
+LegendOnly=/REF/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/pythia-manual.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/professor.yoda/DELPHI_1996_S3430090/d36-x01-y02
+Legend2=1
+Legend2Only=/home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T3.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T4.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T5.yoda/DELPHI_1996_S3430090/d36-x01-y02
+Legend2XPos=0.6
+RatioPlot1=1
+RatioPlot1DrawOnly=/REF/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/professor.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T3.yoda/DELPHI_1996_S3430090/d36-x01-y02
+RatioPlot1DrawReferenceFirst=0
+RatioPlot1Reference=/REF/DELPHI_1996_S3430090/d36-x01-y02
+RatioPlot1SameStyle=1
+RatioPlot1YLabel=MC/data
+RatioPlot1YMajorTickMarks=20
+RatioPlot1YMax=1.4999
+RatioPlot1YMin=0.5001
+RatioPlot1YSize=4
+RatioPlot2=1
+RatioPlot2DrawOnly=/REF/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T4.yoda/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/pythia-manual.yoda/DELPHI_1996_S3430090/d36-x01-y02
+RatioPlot2DrawReferenceFirst=0
+RatioPlot2Reference=/REF/DELPHI_1996_S3430090/d36-x01-y02
+RatioPlot2SameStyle=1
+RatioPlot2YLabel=MC/data
+RatioPlot2YMajorTickMarks=20
+RatioPlot2YMax=1.4999
+RatioPlot2YMin=0.5001
+RatioPlot2YSize=4
+RatioPlot3=1
+RatioPlot3DrawOnly=/REF/DELPHI_1996_S3430090/d36-x01-y02 /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T5.yoda/DELPHI_1996_S3430090/d36-x01-y02
+RatioPlot3DrawReferenceFirst=0
+RatioPlot3Reference=/REF/DELPHI_1996_S3430090/d36-x01-y02
+RatioPlot3SameStyle=1
+RatioPlot3YLabel=MC/data
+RatioPlot3YMajorTickMarks=20
+RatioPlot3YMax=1.4999
+RatioPlot3YMin=0.5001
+RatioPlot3YSize=4
+# END PLOT
+
+# BEGIN HISTO1D /REF/DELPHI_1996_S3430090/d36-x01-y02
+ConnectBins=0
+ErrorBars=1
+Path=/REF/DELPHI_1996_S3430090/d36-x01-y02
+PolyMarker=*
+Title=\texttt{DELPHI_1996}
+# xlow	 xhigh	 val	 errminus	 errplus
+9.070000e+01	9.170000e+01	9.900000e+00	8.000000e-02	8.000000e-02
+# END HISTO1D
+
+# BEGIN HISTO1D /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/pythia-manual.yoda/DELPHI_1996_S3430090/d36-x01-y02
+ErrorBandColor=green!80!white
+ErrorBandOpacity=0.4
+ErrorBands=1
+LineColor=green!80!black
+LineStyle=solid
+Title=\texttt{Pythia8}:T1
+Path=/home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/pythia-manual.yoda/DELPHI_1996_S3430090/d36-x01-y02
+# xlow	 xhigh	 val	 errminus	 errplus
+9.070000e+01	9.170000e+01	9.476505e+00	1.360400e-01	1.610050e-01
+# END HISTO1D
+
+# BEGIN HISTO1D /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/professor.yoda/DELPHI_1996_S3430090/d36-x01-y02
+ErrorBandColor=blue!60!white
+ErrorBandOpacity=0.4
+ErrorBands=1
+LineColor=blue!80!black
+LineStyle=solid
+Title=\texttt{Pythia8}:T2
+Path=/home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/professor.yoda/DELPHI_1996_S3430090/d36-x01-y02
+# xlow	 xhigh	 val	 errminus	 errplus
+9.070000e+01	9.170000e+01	9.734741e+00	2.180750e-01	2.204570e-01
+# END HISTO1D
+
+# BEGIN HISTO1D /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T3.yoda/DELPHI_1996_S3430090/d36-x01-y02
+ErrorBandColor=RawSienna!20!white
+ErrorBandOpacity=0.4
+ErrorBandStyle=crosshatch,hatchsep=8pt
+ErrorBands=1
+ErrorTubeLineColor=RawSienna!50!white
+ErrorTubes=1
+ErrorType=env
+LineColor=RawSienna!80!black
+LineStyle=solid
+LineWidth=1.5pt
+Title=\texttt{Pythia8}:T3
+Path=/home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T3.yoda/DELPHI_1996_S3430090/d36-x01-y02
+# xlow	 xhigh	 val	 errminus	 errplus
+9.070000e+01	9.170000e+01	9.734190e+00	2.189230e-01	2.194030e-01
+# END HISTO1D
+
+# BEGIN HISTO1D /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T4.yoda/DELPHI_1996_S3430090/d36-x01-y02
+ErrorBandColor=blue
+ErrorBandOpacity=0.1
+ErrorBands=1
+ErrorBandStyle=hlines
+ErrorTubeLineColor=blue!50!white
+ErrorTubes=1
+ErrorType=env
+LineColor=blue!80!black
+LineWidth=1.5pt
+LineStyle=solid
+Title=\texttt{Pythia8}:T4
+Path=/home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T4.yoda/DELPHI_1996_S3430090/d36-x01-y02
+# xlow	 xhigh	 val	 errminus	 errplus
+9.070000e+01	9.170000e+01	9.738403e+00	2.204390e-01	2.209370e-01
+# END HISTO1D
+
+# BEGIN HISTO1D /home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T5.yoda/DELPHI_1996_S3430090/d36-x01-y02
+ErrorBandColor=orange!80!white
+ErrorBandOpacity=0.4
+ErrorBands=1
+LineColor=orange!80!black
+LineStyle=solid
+Title=\texttt{Pythia8}:T5
+Path=/home/arhrib/Desktop/Adil/PhD/DarkMatter_QCD/Results/T5.yoda/DELPHI_1996_S3430090/d36-x01-y02
+# xlow	 xhigh	 val	 errminus	 errplus
+9.070000e+01	9.170000e+01	9.918405e+00	2.264950e-01	2.235650e-01
+# END HISTO1D
+
