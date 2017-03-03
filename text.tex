@@ -7,12 +7,12 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{graphics}
-%\usepackage{feynarts}
 \usepackage{hyperref}
 \hypersetup{ }
 \usepackage{epstopdf}
 \usepackage{adjustbox,lipsum}
-%\usepackage{tgbonum}
+
+\renewcommand{\arraystretch}{1.3}
 
 
 \begin{document}
@@ -26,8 +26,8 @@
 Institute of Physics, University of Amsterdam, Science Park 904, 1018 XE Amsterdam, The
 Netherlands}
 \author{Adil Jueid}
-\affiliation{University AbdelMalek Essaadi, 
-Facult\'e des Sciences et Techniques, D\'epartement de Math\'ematiques, 
+\affiliation{D\'epartement de Math\'ematiques, Facult\'e des Sciences et Techniques,
+University Abdelmalek Essaadi,  
 B.P 416 Tangier, Morocco.}
 \author{Roberto Ruiz de Austri}
 \affiliation{Instituto de F\'isica Corpuscular, IFIC-UV/CSIC, Valencia, Spain}
@@ -48,6 +48,7 @@ We investigate the uncertainties in some observables using
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{Section1}
 There is strong evidence suggesting that a mysterious “dark matter” exists which
 accounts for about $22\%$ of the mass of the universe. Although the properties
 of dark matter remain unknown, many models predict the annihilation of dark
@@ -64,41 +65,62 @@ into color-neutral hadrons.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Theory Models} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{String fragmentation function in \texttt{Pythia8}} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{Section2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Setup} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The first part of the uncertainties estimation is tuning of 
-the parameters of the parton shower model and hadronization 
-in Pythia to a set of sensitive LEP measurements. Our set
+\label{Section3}
+
+We tune the parameters of the string fragmentation model 
+in \texttt{Pythia8} to a set of sensitive LEP measurements. Our set
 of theoretical predictions will be tuned against
-\texttt{ALEPH} \cite{Barate:1996fi, Heister:2001jg, Heister:2001kp},
-\texttt{DELPHI} \cite{Abreu:1996na, Abreu:1998nn, DELPHI_2002} and 
-\texttt{OPAL} \cite{Akers:1994ez, Ackerstaff:1998ap, Abbiendi:2000cv} experiments.
+\texttt{ALEPH} \cite{Decamp:1991uz, Buskulic:1994ft, Buskulic:1995au, Barate:1996fi, Heister:2001kp, Heister:2003aj},
+\texttt{DELPHI} \cite{Abreu:1996na}, \texttt{L3} \cite{Adriani:1992hd, Achard:2004sv}, 
+\texttt{OPAL} \cite{Akers:1994ez, Ackerstaff:1998ap, Ackerstaff:1998hz, Abbiendi:2004qz} and
+\texttt{SLD} \cite{Abe:1998zs}
+experiments. Furthermore, we will use the 
+mean pion multiplicities from the \texttt{PDG} \cite{Amsler:2008zzb}.
 In the first step, we will be tunig only the parameters of 
 the light quark fragmentation function $a_L, b_L \text{ and } \sigma$ 
-and consider 5 different tunes depending on included the observables:
+and consider 10 different tunes depending on the included observables. 
+First, we have used \texttt{VINCIA} \cite{Giele:2007di} to tune manually those 
+parameters using data from \texttt{ALEPH}, \texttt{L3}
+and the \texttt{PDG} \cite{Achard:2004sv, Amsler:2008zzb}. This tune 
+is denoted by \texttt{T10}. 
+The other tunes are done using \texttt{Professor}:
 \begin{itemize}
-\item the manual tune denoted by \texttt{T1} where the parameters
-are tuned manually against \texttt{L3}, and some of the distributions in \texttt{ALEPH}
-using \texttt{Vincia} \cite{Giele:2007di}
- \item the second tune \texttt{T2} which includes mean particle multiplicities, event shapes, 
- scaled momentum distribution, jet rates, and some particle spectra. The included observables
- are shown in tables \ref{Tab1},\ref{Tab2},\ref{Tab3},\ref{Tab4}.
- \item the third tune denoted by \texttt{T3} includes only charged multiplicity, mean charged multiplicities,
- mean particle multiplicities ($\pi^0, \pi^\pm$), jet rates, scaled momentum distributions, and $\gamma, \pi^{0,\pm}, \eta$
- spectra. Tables \ref{Tab3} and \ref{Tab5} show the observables that we have included along with their 
- weights.
- \item \texttt{T4} denoting the fourth tune which includes scaled momentum distributions, mean pion multiplicities, 
- pion, photon and eta spectra and jet rates. The observables with their weights are shown in Tables \ref{Tab3} and \ref{Tab6}.
- \item finally, a fifth tune which uses $\pi^{0,\pm}, \gamma \text{ and } \eta$ to constrain the parameters. The weights
- are shown in \ref{Tab7}.
-\end{itemize}
-Except the first tune, all the other fits are performed using \texttt{Professor} \cite{Buckley:2009bj} with 
-the analyses that are implemented in \texttt{Rivet} \cite{Buckley:2010ar}. We have 
-chosen only the distributions that are sensitive to the variations 
+ \item In the first tune \texttt{T1}, we include $\pi^{0,\pm}$, $\eta$
+ and $\gamma$ spectra. The observables and their corresponding weights are
+ shown in Table \ref{Tab1}.
+ \item The second tune includes, in addition to meson and photon spectra,
+ quark-to-photon fragmentation function. The weights of those observables 
+ are depicted in Table \ref{Tab1}, \ref{Tab6}.
+ \item the third tune denoted by \texttt{T3} uses meson and photon spectra,
+ photon fragmentation function and event shapes. Tables \ref{Tab1}, \ref{Tab4}, \ref{Tab5} and
+ \ref{Tab6} show the observables and their weights.
+ \item \texttt{T4} denotes the fourth tune which uses, in addition to the observables
+ included in \texttt{T3} tune, the jet rates.
+ The observables with their weights are shown in Tables \ref{Tab1}, \ref{Tab3},
+ \ref{Tab4}, \ref{Tab5} and \ref{Tab6}.
+ \item \texttt{T5} uses all those observables and the mean multiplicities. The weights
+ for these observables are shown in Tables \ref{Tab1}-\ref{Tab6}.
+ \item In the tune \texttt{T6}, we include meson and photon spectra and event shapes only.
+The observables and the associated weights are shown in Tables \ref{Tab1}, \ref{Tab4} and \ref{Tab5}.
+ \item The $7\text{th}$ tune is the same as \texttt{T4} except that we don't include 
+photon fragmention function observables.
+ \item \texttt{T8} is the same as \texttt{T5} without including photon fragmentation 
+ function.
+ \item \texttt{T9} uses the observables 
+ measured by \texttt{L3$\_$2004$\_$I652683} \cite{Achard:2004sv} only.\footnote{There is, probably, 
+ a tension between \texttt{L3$\_$2004$\_$I652683} and the other measurements.} 
+ \end{itemize}
+Except the \texttt{T10} tune, all the other fits 
+are performed using \texttt{Professor} \cite{Buckley:2009bj} with 
+the analyses that are implemented in \texttt{Rivet} \cite{Buckley:2010ar}. 
+We have chosen only the distributions that are sensitive to the variations 
 of $a_L, b_L \text{ and } p_\perp(\sigma)$. The goodness of fit per 
 degree-of-freedom is a measure of how well the MC predictions agree
 with experiment. It is defined as follows:
@@ -107,12 +129,16 @@ with experiment. It is defined as follows:
  \omega_\mathcal{O} \sum_{b\in \mathcal{O}} (f_{(b)}(\textbf{p}) - \mathcal{R}_b)^2/\Delta_b^2}{\sum_{\mathcal{O}} \omega_\mathcal{O} |b \in \mathcal{O}|},
 \label{Gof-Ndf}
  \end{eqnarray}
-where $\mathcal{R}_b$ is the reference value and $\Delta_b$ is the total
-experimental error of the data per bin and per distribution $\mathcal{O}$. The modeling
-of the true MC response is done using a set of functions $f_{(b)}(\textbf{p})$. The weights
-per observable and bin $\omega_\mathcal{O}$ are used to compute the goodness-of-fit. Furthermore,
-the weights could have different values for different bins of the same observable. The functions
-$f_{(b)}(\textbf{p})$ parameterising the MC response should be at least a polynomial of second-order.
+where $\mathcal{R}_b$ is the reference value and $\Delta_b$ 
+is the total experimental error of the data per bin and per 
+distribution $\mathcal{O}$. The modeling of the true MC response 
+is done using a set of functions $f_{(b)}(\textbf{p})$. The weights
+per observable and bin $\omega_\mathcal{O}$ are used to compute the 
+goodness-of-fit. Furthermore, the weights could have different values 
+for different bins of the same observable. We, however, use the same 
+weight for all the bins in the same distribution. 
+The functions $f_{(b)}(\textbf{p})$
+parameterising the MC response should be at least a polynomial of second-order.
 We have been using a third-order polynomial to model the MC response, i.e:
 \begin{eqnarray}
  f_{(b)}(\textbf{p}) = \alpha_0^{(b)} + \sum_i \beta_i^{(b)} p_i + \sum_{i \leq j} \gamma_{ij}^{(b)} q_i q_j +
@@ -122,8 +148,9 @@ We have been using a third-order polynomial to model the MC response, i.e:
 with $\textbf{q} = \textbf{p} - \textbf{p}_0$ and $\textbf{p}_0$ is a reference point in the 
 parameter space. We note, finally, that the modeling functions $f_{(b)}(\textbf{p})$ 
 should be replaced by true MC functions $\text{MC}_{(b)}$ if real MC samples are used.
-To get a good tune, we have to use a big number of MC runs. For this study, 110 random combinations
-of 1000 runs have been used. 
+To get a good tune, we have to use a big number of MC runs. 
+For this study, 120 random combinations
+of 1000 independent runs have been used. 
 The method of eigentunes in \texttt{Professor} is used to get an estimate of the 
 uncertainty in the MC predictions where a change of the parameter values is 
 performed. The paramters are changed in the eigenvectors directions where the 
@@ -143,224 +170,547 @@ respect to the central tune.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Results of the tunes}
+\label{Section4}
 
- \begin{table}[!h]
-  \begin{center}
-   \begin{tabular}{l|l|l|l|l|l}
-    \hline \hline
-    Parameter  & \hspace{1cm} \texttt{T1} \hspace{0.5cm} & \hspace{1cm} \texttt{T2} \hspace{0.5cm} & \hspace{1cm} \texttt{T3} \hspace{0.5cm}& \hspace{1cm} \texttt{T4} \hspace{0.5cm} & \hspace{1cm} \texttt{T5} \hspace{0.5cm}  \\ \hline
-    $a_L$      & \hspace{1cm} $0.8$  \hspace{0.5cm}    & \hspace{1cm} $0.967$ \hspace{0.5cm} & \hspace{1cm} $0.92$ \hspace{0.5cm} & \hspace{1cm} $0.9095$ \hspace{0.5cm} & \hspace{1cm} $0.7863$ \hspace{0.5cm} \\ \hline
-    $b_L$      & \hspace{1cm} $1.13$ \hspace{0.5cm}     & \hspace{1cm}  $1.14$ \hspace{0.5cm} & \hspace{1cm} $1.06$ \hspace{0.5cm} & \hspace{1cm} $1.048$ \hspace{0.5cm} & \hspace{1cm} $0.6502$ \hspace{0.5cm} \\ \hline
-    $p_\perp (\text{GeV})$  & \hspace{1cm} $0.327$ \hspace{0.5cm} & \hspace{1cm} $0.303176$ \hspace{0.5cm}  & \hspace{1cm} $0.3093$ \hspace{0.5cm} & \hspace{1cm} $0.3092$ \hspace{0.5cm} & \hspace{1cm} $0.3515$ \hspace{0.5cm}\\ \hline \hline
-   \end{tabular}
-  \end{center}
-  \caption{Results of the different fits.}
-  \label{Fit-1}
- \end{table}
- In Table \ref{Fit-1}, we show the minimization results of the different tunes. We can see 
- that \texttt{T2}, \texttt{T3} and \texttt{T4} give more or less the same results while
- \texttt{T1} and \texttt{T4} give higher values for $p_\perp$. We plot in Figs. \ref{Chi2-1}-\ref{Chi2-5}  the 
- $\chi^2$ values computed using \texttt{Vincia} of three observables; $x$, $\log(1/x_p)$ and charged multiplicity.
- We can see that \texttt{T1} give the best $\chi^2$ values. We note that the \texttt{Professor} tunes
- give reasonable agreement with data for event shapes.
- \begin{figure}[!h]
+\subsection{Tunes and uncertainties}
+\begin{figure}[!h]
  \centering
- \includegraphics[width=5cm, height=5cm]{Vincia-T1/vincia03-x.pdf}
+ \includegraphics[width=0.47\linewidth]{Figures/RS/Set1/chi2_StringPT_Sigma.pdf}
  \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T1/vincia03-Lnx.pdf}
+ \includegraphics[width=0.47\linewidth]{Figures/RS/Set1/chi2_StringZ_aLund.pdf}
  \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T1/vincia03-Nch.pdf}
- \caption{$\chi^2$ values computed for $x$- (left), $|\log(x_p)|$ (middle) and charged multiplicity (right) using
- \texttt{Vincia}. Input parameters are from the \texttt{T1} fit results.}
- \label{Chi2-1}
- \end{figure}
- 
-  \begin{figure}[!h]
- \centering
- \includegraphics[width=5cm, height=5cm]{Vincia-T2/vincia03-x.pdf}
- \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T2/vincia03-Lnx.pdf}
- \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T2/vincia03-Nch.pdf}
- \caption{$\chi^2$ values computed for $x$- (left), $|\log(x_p)|$ (middle) and charged multiplicity (right) using
- \texttt{Vincia}. Input parameters are from the \texttt{T2} fit results.}
- \label{Chi2-2}
- \end{figure}
- 
-   \begin{figure}[!h]
- \centering
- \includegraphics[width=5cm, height=5cm]{Vincia-T3/vincia03-x.pdf}
- \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T3/vincia03-Lnx.pdf}
- \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T3/vincia03-Nch.pdf}
- \caption{$\chi^2$ values computed for $x$- (left), $|\log(x_p)|$ (middle) and charged multiplicity (right) using
- \texttt{Vincia}. Input parameters are from the \texttt{T3} fit results.}
- \label{Chi2-3}
- \end{figure}
- 
-   \begin{figure}[!h]
- \centering
- \includegraphics[width=5cm, height=5cm]{Vincia-T4/vincia03-x.pdf}
- \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T4/vincia03-Lnx.pdf}
- \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T4/vincia03-Nch.pdf}
- \caption{$\chi^2$ values computed for $x$- (left), $|\log(x_p)|$ (middle) and charged multiplicity (right) using
- \texttt{Vincia}. Input parameters are from the \texttt{T3} fit results.}
- \label{Chi2-4}
- \end{figure}
- 
-   \begin{figure}[!h]
- \centering
- \includegraphics[width=5cm, height=5cm]{Vincia-T5/vincia03-x.pdf}
- \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T5/vincia03-Lnx.pdf}
- \hfill
- \includegraphics[width=5cm, height=5cm]{Vincia-T5/vincia03-Nch.pdf}
- \caption{$\chi^2$ values computed for $x$- (left), $|\log(x_p)|$ (middle) and charged multiplicity (right) using
- \texttt{Vincia}. Input parameters are from the \texttt{T5} fit results.}
- \label{Chi2-5}
- \end{figure}
+ \includegraphics[width=0.47\linewidth]{Figures/RS/Set1/chi2_StringZ_bLund.pdf}
+ \caption{Scatterplots for \textsf{aLund}, \textsf{bLund} and \textsf{PTSigma} in
+ the \texttt{T1} tune. These plots show the $\chi^2$ for the three different 
+ parameters where the red circles represent the best fit and the cross marks illustrate 
+ the results for 910 independent runs.}
+ \label{RS.1}
+\end{figure}
 
- \begin{table}[tbp]
-  \begin{center}
-   \begin{tabular}{l|l|l|l|l}
-    \hline \hline
-    Parameter \hspace{1cm} & \hspace{1cm} $\Delta\sigma(\texttt{T1}) = +1 $ & \hspace{1cm} $\Delta\sigma(\texttt{T1}) = -1 $ & \hspace{1cm} $\Delta\sigma(\texttt{T2}) = +1 $ & \hspace{1cm} $\Delta\sigma(\texttt{T2}) = -1 $\\ \hline
-    $a_L$     \hspace{1cm} & \hspace{1cm} $0.88$      &  \hspace{1cm} $0.7$ & \hspace{1cm} $0.8073$  & \hspace{1cm}  $1.139$ \\ \hline
-    $b_L$     \hspace{1cm} & \hspace{1cm} $1.1$      &  \hspace{1cm} $1.2$ & \hspace{1cm} $1.175$ & \hspace{1cm} $1.097$  \\ \hline 
-    $p_\perp (\text{GeV})$ \hspace{1cm} & \hspace{1cm} $0.3$ &  \hspace{1cm} $0.3$ & \hspace{1cm} $0.3024$ &  \hspace{1cm} $0.3042$ \\ \hline
-\hline
-    \end{tabular}
-  \end{center}
-  \caption{Variation results of $a_L, b_L \text{ and } p_\perp$ using the manual method $\texttt{T1}$ and
-  the \texttt{eigentune} method \texttt{T2}}
-  \label{Variation-1}
- \end{table}
- 
-  \begin{table}[tbp]
-  \begin{center}
-   \begin{tabular}{l|l|l|l|l}
-    \hline \hline
-    Parameter \hspace{1cm} & \hspace{1cm} $\Delta\sigma(\texttt{T3}) = +1 $ & \hspace{1cm} $\Delta\sigma(\texttt{T3}) = -1 $ & \hspace{1cm} $\Delta\sigma(\texttt{T4}) = +1 $ & \hspace{1cm} $\Delta\sigma(\texttt{T4}) = -1 $\\ \hline
-    $a_L$     \hspace{1cm} & \hspace{1cm} $0.9286$  &  \hspace{1cm} $0.9112$ & \hspace{1cm} $0.9181$  & \hspace{1cm}  $0.9004$ \\ \hline
-    $b_L$     \hspace{1cm} & \hspace{1cm} $1.06$    &  \hspace{1cm} $1.06$ & \hspace{1cm} $1.048$ & \hspace{1cm} $1.048$  \\ \hline 
-    $p_\perp (\text{GeV})$ \hspace{1cm} & \hspace{1cm} $0.277$ &  \hspace{1cm} $0.3431$ & \hspace{1cm} $0.2768$ &  \hspace{1cm} $0.3432$ \\ \hline
-    \hline
-    \end{tabular}
-  \end{center}
-  \caption{Variation results of $a_L, b_L \text{ and } p_\perp$ around the \texttt{T3} and \texttt{T4} fit results.}
-  \label{Variation-2}
- \end{table}
- 
- \begin{table}
-  \begin{center}
-   \begin{tabular}{l|l|l}
-    \hline \hline
-    Parameter \hspace{1cm} & \hspace{1cm} $\Delta\sigma(\texttt{T5}) = +1 $ & \hspace{1cm} $\Delta\sigma(\texttt{T5}) = -1 $ \\ \hline
-    $a_L$     \hspace{1cm} & \hspace{1cm} $0.5676$       &  \hspace{1cm} $1.041$  \\ \hline
-    $b_L$     \hspace{1cm} & \hspace{1cm} $0.5865$        &  \hspace{1cm} $0.7244$ \\ \hline
-    $p_\perp (\text{GeV})$ \hspace{1cm} & \hspace{1cm} $0.3562$ &  \hspace{1cm} $0.346$ \\ \hline \hline
-   \end{tabular}
-  \end{center}
-  \caption{Variation results of $a_L, b_L \text{ and } p_\perp$ around the \texttt{T5} fit results.}
-  \label{Variation-3}
+
+\begin{table}[!h]
+ \begin{center}
+  \begin{tabular}{ c | c | c | c | c }
+  \hline \hline
+   Parameter   & \hspace{0.8cm} $a_L$  \hspace{0.8cm} & \hspace{0.8cm} $b_L$  \hspace{0.8cm} & \hspace{0.8cm} $p_\perp$ \hspace{0.8cm}  & \hspace{0.8cm} $\chi^2/N_{df}$ \hspace{0.8cm} \\ \hline
+   \texttt{T1} & $0.8756$      & $0.7886$  & $0.3362$  & $3.33$          \\ \hline
+   \texttt{T2} & $0.9016$      & $0.8088$  & $0.3362$  & $3.34$          \\ \hline
+   \texttt{T3} & $0.9598$      & $1.148$   & $0.2951$  & $5.3$           \\ \hline
+   \texttt{T4} & $0.9606$      & $1.16$    & $0.2931$  & $5.45$          \\ \hline
+   \texttt{T5} & $0.9616$      & $1.161$   & $0.2932$  & $5.42$          \\ \hline \hline
+  \end{tabular}
+ \end{center}
+ \caption{Minimization results for the tunes \texttt{T1}-\texttt{T5}. 
+ The last row shows the $\chi^2$ per degree of freedom for the included observables only.}
+ \label{Table.tunes}
+\end{table}
+
+\begin{table}[!t]
+ \begin{center}
+   \begin{tabular}{ c | c | c | c | c }
+  \hline \hline
+   Parameter   & \hspace{0.8cm} $a_L$  \hspace{0.8cm} & \hspace{0.8cm} $b_L$  \hspace{0.8cm} & \hspace{0.8cm} $p_\perp$ \hspace{0.8cm}  & \hspace{0.8cm} $\chi^2/N_{df}$ \hspace{0.8cm} \\ \hline
+\texttt{T6} & $0.9548$      & $1.144$   & $0.295$   & $5.29$          \\ \hline
+   \texttt{T7} & $0.9559$      & $1.156$   & $0.2931$  & $5.45$          \\ \hline
+   \texttt{T8} & $0.9569$      & $1.157$   & $0.2931$  & $5.42$         \\ \hline
+   \texttt{T9} & $0.5176$      & $0.9665$  & $0.2768$  & $3.29$              \\ \hline
+ \textttt{T10} & $0.8$         & $1.13$    & $0.327$   & $-$            \\ \hline \hline
+ \end{tabular}
+ \end{center}
+ \caption{Minimization results for the tunes \texttt{T6}-\texttt{T10}.}
+ \label{Table.tunes1}
  \end{table}
 
 
- \begin{figure}[btp]
+\begin{figure}[tbp]
  \centering
- \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d01-x01-y01.pdf}
+ \includegraphics[width=0.35\linewidth]{Figures/RS/Set6/chi2_StringPT_Sigma.pdf}
  \hfill
-  \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d03-x01-y01.pdf}
-  \caption{Sphericity (left) and Thrust (right) distributions. Data are taken from \cite{Barate:1996fi}.}
-  \label{Fig-1}
- \end{figure} 
- 
+ \includegraphics[width=0.35\linewidth]{Figures/RS/Set6/chi2_StringZ_aLund.pdf}
+ \hfill
+ \includegraphics[width=0.35\linewidth]{Figures/RS/Set6/chi2_StringZ_bLund.pdf}
+ \caption{Scatterplots for \textsf{aLund}, \textsf{bLund} and \textsf{PTSigma} in
+ the \texttt{T6} tune. These plots show the $\chi^2$ for the three different 
+ parameters where the red circles represent the best fit and the cross marks illustrate 
+ the results for 910 independent runs.}
+ \label{RS.2}
+\end{figure}
 
-\begin{figure}[btp]
- \centering
- \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d19-x01-y01.pdf}
- \hfill
-  \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d20-x01-y01.pdf}
-  \vfill
-   \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d21-x01-y01.pdf}
- \hfill
-  \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d22-x01-y01.pdf}
-  \caption{Mean charged multiplicity (left top), for $|Y| < 0.5$ (right top), $|Y| < 1$ (left bottom)
-  and $|Y| < 1.5$ (right bottom). Data taken from \cite{Barate:1996fi}.}
-  \label{Fig-2}
- \end{figure} 
- 
- 
-\begin{figure}[btp]
- \centering
- \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d09-x01-y01.pdf}
- \hfill
-  \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d17-x01-y01.pdf}
-  \vfill
-     \includegraphics[width=8cm, height=9cm]{DELPHI_1996/d07-x01-y01.pdf}
- \hfill
-  \includegraphics[width=8cm, height=9cm]{DELPHI_1996/d08-x01-y01.pdf}
-  \caption{Scaled momentum distribution for charged particles (top) and all particles (bottom). Data
-  from \cite{Barate:1996fi} and \cite{Abreu:1996na}.}
-  \label{Fig-3}
- \end{figure}
- 
- 
- 
-  \begin{figure}[!h]
-  \centering
-   \includegraphics[width=8cm, height=9cm]{DELPHI_1996/d27-x01-y01.pdf}
- \hfill
-  \includegraphics[width=8cm, height=9cm]{DELPHI_1996/d29-x01-y01.pdf}
-  \caption{Differential $3$- (left) and $4$- (right) jet rate. Data from \cite{Abreu:1996na}. }
-  \label{Fig-4}
- \end{figure}
 
- 
- \begin{figure}[btp]
+\begin{figure}[!h]
  \centering
- \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d25-x01-y01.pdf}
+ \includegraphics[width=0.35\linewidth]{Figures/RS/Set-L3/chi2_StringPT_Sigma.pdf}
  \hfill
-  \includegraphics[width=8cm, height=9cm]{OPAL_1994/d01-x01-y01.pdf}
-  \caption{Charged pion momentum distribution. Data from \cite{Barate:1996fi, Akers:1994ez}.}
-  \label{Fig-5}
- \end{figure}
- 
-  \begin{figure}[btp]
- \centering
- \includegraphics[width=8cm, height=9cm]{DELPHI_1996/d36-x01-y02.pdf}
+ \includegraphics[width=0.35\linewidth]{Figures/RS/Set-L3/chi2_StringZ_aLund.pdf}
  \hfill
-  \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d44-x01-y02.pdf}
-  \caption{Mean $\pi^0$ multiplicity. Data from \cite{Barate:1996fi, Abreu:1996na}.}
-  \label{Fig-6}
- \end{figure}
- 
-   \begin{figure}[btp]
- \centering
- \includegraphics[width=8cm, height=9cm]{OPAL_1998/d04-x01-y01.pdf}
- \hfill
-  \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d29-x01-y01.pdf}
-  \caption{$\pi^0$ momentum distribution. Data from \cite{Barate:1996fi, Ackerstaff:1998ap}.}
-  \label{Fig-7}
- \end{figure}
+ \includegraphics[width=0.35\linewidth]{Figures/RS/Set-L3/chi2_StringZ_bLund.pdf}
+ \caption{Scatterplots for \textsf{aLund}, \textsf{bLund} and \textsf{PTSigma} in
+ the \texttt{T9} tune. These plots show the $\chi^2$ for the three different 
+ parameters where the red circles represent the best fit and the cross marks illustrate 
+ the results for 910 independent runs.}
+ \label{RS.3}
+\end{figure}
+\clearpage
 
- 
- \begin{figure}[btp]
-  \centering
-   \includegraphics[width=8cm, height=9cm]{OPAL_1998/d03-x01-y01.pdf}
- \hfill
-  \includegraphics[width=8cm, height=9cm]{ALEPH_1996/d28-x01-y01.pdf}
-  \caption{$\gamma$ spectrum. Data is taken from \cite{Barate:1996fi, Ackerstaff:1998ap}.}
-  \label{Fig-8}
- \end{figure}
+In Tables \ref{Table.tunes} and \ref{Table.tunes1}, we show 
+the minimization results for the different tunes. We can see 
+that, from these tables, the quark-to-photon fragmentation
+function observables modify slightly the values of the parameters
+obtained from the \texttt{T1} tune.
+We note that tuning the parameters of the string fragmentation 
+function to the observables depicted in Table \ref{Tab6} only 
+gives results outside the parameter boundaries. However, event
+shapes constrain severely the string fragmentation function. 
+The inclusion of those  observables, especially charged multiplicity 
+and scaled momentum, modify the hierarchy of the parameters 
+(going from $a_L > b_L$ to $b_L > a_L$) and gives smaller 
+values of \textsf{PTSigma} than the one obtained with 
+\texttt{T1} and \texttt{T2}. The other observables (such
+as the Thrust and Sphericity) are mainly sensitive 
+to pertubative QCD and gets important effects in certain
+regions where soft QCD becomes important. 
+This can be seen in Figs. \ref{Fig.8}-\ref{Fig.12} where 
+the effect of the parameters on those observables is reflected 
+in the uncertainty envelopes as well. \\
+Including, however, jet rates to the list of observables do not
+change much the results of the tunes even if we give them 
+higher weights. Mean multiplicities (total charged, $\pi^0$ and 
+$\pi^\pm$) do not constrain much the parameters of the string 
+fragmentation function. In the \texttt{T6}-\texttt{T8} tunes, 
+we have not included photon fragmentation function observables. 
+Results depicted in Table \ref{Table.tunes1} confirm our thoughts 
+about the role of $\gamma$-fragmentation function observables 
+in the fit. \\
+In the \texttt{T9} tune, we have tuned against the observables 
+of \texttt{L3\_2004\_I652683} only. We can see in Table 
+\ref{Table.tunes1}, that the results of \texttt{T9} fit are
+very different from the other tunes.\footnote{We note that the 
+charged multiplicity was not included in this tune.} \\
+In order to check the robustness of the tunes performed by 
+\texttt{Professor}, we have used \texttt{plotscatter}. 
+In Figs.\ref{RS.1}-\ref{RS.3}, we show the results of 
+\texttt{plotscatter} in the case of \texttt{T1},\texttt{T6} 
+and \texttt{T9} tunes. We can see that the parameters (and the 
+goodness-of-fit) do not change too much when one change the 
+number of independent MC runs from 1000  to 910. \\
+The values of the parameters obtained from the different
+tunes are inserted in \texttt{VINCIA} to make another 
+check of the robustness of the fits. In \texttt{VINCIA}, 
+the computation of the goodness-of-fit per degree of 
+freedom is done using eqn. \ref{chi2} where a $5\%$ of 
+theory uncertainties is included. The considered observables 
+are charged multiplicity, the log of scaled
+momentum and some event shape observables in $udsc$ events 
+from \texttt{L3} \cite{Achard:2004sv}, scaled momentum 
+distribution from \texttt{ALEPH} \cite{} and the mean 
+particle multiplicities from the \texttt{PDG} \cite{Amsler:2008zzb}.
 
+\begin{table}[!t]
+\begin{center}
+ \begin{tabular}{ c | c | c | c | c | c | c}
+ \hline \hline
+  Tune       \hspace{1cm} & \hspace{0.3cm} $N_{\textrm{ch}}$ \hspace{0.3cm} 
+  & \hspace{0.3cm} $\log(1/x_p)$ \hspace{0.3cm} & \hspace{0.3cm} $x_p$ \hspace{0.3cm} & \hspace{0.2cm} $C$-parameter \hspace{0.2cm} &
+  \hspace{0.3cm} $|y_\textrm{Thr}|$ \hspace{0.3cm} & \hspace{0.3cm} $1-T$ \hspace{0.3cm} \\ \hline \hline
+  \texttt{T1} & $9.9$ & $2.8$ & $3.5$  & $1.4$ & $0.4$ & $1.3$  \\ \hline \hline 
+  \texttt{T2} & $10.0$ & $2.9$  & $3.7$ & $1.4$ & $0.4$ & $1.3$ \\ \hline \hline
+  \texttt{T3} & $8.0$  & $2.0$  & $1.4$ & $0.2$ & $1.2$ & $0.2$ \\ \hline \hline
+  \texttt{T4} & $8.1$  & $2.0$  & $1.4$ & $0.3$ & $1.1$ & $0.3$ \\ \hline \hline
+  \texttt{T5} & $8.3$  & $2.0$  & $1.4$ & $0.2$ & $1.2$ & $0.3$ \\ \hline \hline
+  \texttt{T6} & $8.3$  & $2.0$  & $1.3$ & $0.2$ & $1.1$ & $0.3$ \\ \hline \hline
+  \texttt{T7} & $7.9$  & $2.0$  & $1.4$ & $0.2$ & $1.2$ & $0.3$ \\ \hline \hline
+  \texttt{T8} & $7.9$  & $2.0$  & $1.3$ & $0.2$ & $1.2$ & $0.3$ \\ \hline \hline
+  \texttt{T9} & $2.5$  & $0.3$  & $1.1$ & $0.5$ & $2.7$ & $0.4$ \\ \hline \hline
+ \texttt{T10} & $0.5$  & $0.9$  & $0.3$ & $0.2$ & $1.8$ & $0.3$ \\ \hline \hline
+ \end{tabular}
+\end{center}
+\caption{$\chi^2/N_{dof}$ for different distributions computed with \texttt{VINCIA}
+including a $5\%$ theoretical uncertainty.}
+\label{Vincia.chi2}
+\end{table}
+
+\begin{eqnarray}
+ \chi^2 = \frac{1}{N_\textrm{bins}} \sum_i^{N_\textrm{bins}} \frac{(\mathcal{O}_i^\textrm{th} - \mathcal{O}_i^\textrm{exp})^2}
+ {\sigma^2_i + (0.05  \mathcal{O}_i^\textrm{th})^2}
+ \label{chi2}
+\end{eqnarray}
+
+The results of \texttt{VINCIA} computation
+are depicted in Table \ref{Vincia.chi2} for four
+measurements; $N_\textrm{ch}, \log(x_p), x_p, C-\textrm{parameter}, 
+|y_\textrm{Thr}| \text{ and }  1- T$.
+We can see that \texttt{T1}-\texttt{T8} do not give satisfying results
+for $N_\textrm{ch}, \log(x_p) \text{ and } x_p$. \texttt{T9}
+gives very nice agreement with data. \\
+
+Results of the uncertainty variations are depicted in Table \ref{Table.variations1}
+for the different tunes.
+
+
+\begin{table}[!h]
+ \begin{center}
+ \begin{tabular}{ c | c | c | c | c  }
+ \hline \hline
+  Parameter   & & \hspace{0.4cm} $a_L + \Delta a_L^{1\sigma}$ \hspace{0.4cm}   & \hspace{0.4cm} $b_L + \Delta b_L^{1\sigma}$ \hspace{0.4cm} & \hspace{0.4cm} $p_\perp + \Delta p_\perp^{1\sigma}$ \hspace{0.4cm} \\ \hline \hline
+  \texttt{T1} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $1.156$   & $0.863$  & $0.3337$ \\ 
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $0.6393$  & $0.7259$ & $0.3383$ \\ \hline \hline
+  \texttt{T2} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $0.7662$  & $0.8442$ & $0.3372$ \\ 
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $1.037$   & $0.7735$ & $0.3352$ \\ \hline \hline
+  \texttt{T3} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $1.325$   & $1.224$  & $0.2983$ \\ 
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $0.665$   & $1.087$  & $0.2925$ \\ \hline \hline
+  \texttt{T4} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $1.336$   & $1.236$  & $0.2965$ \\ 
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $0.6587$  & $1.099$  & $0.2904$ \\ \hline \hline
+  \texttt{T5} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $1.336$   & $1.237$  & $0.2965$ \\ 
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $0.6601$  & $1.1$    & $0.2905$ \\ \hline \hline
+  \texttt{T6} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $1.318$   & $1.219$  & $0.2982$ \\ 
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $0.6612$  & $1.083$  & $0.2925$ \\ \hline \hline
+  \texttt{T7} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $1.329$   & $1.232$  & $0.2964$ \\ 
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $0.6551$  & $1.095$  & $0.2904$ \\ \hline \hline
+  \texttt{T8} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $0.7512$  & $1.199$  & $0.2913$   \\ 
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $1.172$   & $1.114$  & $0.295$    \\ \hline \hline
+  \texttt{T9} & $\Delta\sigma=-1$ \hspace{0.5cm}  & $0.6492$  & $0.9269$ & $0.2803$   \\
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  & $0.3884$  & $1.005$  & $0.2735$  \\ \hline \hline
+ \texttt{T10} & $\Delta\sigma=-1$ \hspace{0.5cm}  &  $0.88$   &  $1.1$   &  $0.3$  \\
+              & $\Delta\sigma=+1$ \hspace{0.5cm}  &  $0.7$    &  $1.2$   &   $0.3$  \\ \hline \hline
+ \end{tabular}
+ \end{center}
+ \caption{$1\sigma$ variations of $a_L$, $b_L$ and $\sigma$ of the tunes \texttt{T1}-\texttt{T5}.}
+ \label{Table.variations1}
+\end{table}
+\clearpage
+
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/ALEPH_1996_S3486095_d25-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/OPAL_1994_S2927284_d01-x01-y01.pdf}
+ \caption{$\pi^\pm$ spectrum. Data from \texttt{ALEPH$\_$1996$\_$S3486095} 
+ \cite{Barate:1996fi} (left panel) and  \texttt{OPAL$\_$1994$\_$S2927284} \cite{Akers:1994ez} (right panel).}
+ \label{Fig.1}
+\end{figure}
+
+In Figs. \ref{Fig.1}-\ref{Fig.4}, we show $\pi^\pm$ and $\pi^0$
+spectra in three different measurements and the theoretical predictions 
+from the 10 tunes. We can see, except the $\pi^\pm$ spectrum in the left panel of Fig. \ref{Fig.1},
+all the tunes are consistent with the experimental measurements. We note, however, that 
+\texttt{T1}-\texttt{T8} tunes give better agreement than \texttt{T9} and \texttt{T10}
+for charged pions. While for $\pi^0$ spectra, inclusion of event shapes 
+improve significantly the level of agreement between theoretical 
+predictions and experimental measurements. \\
+Furthermore, in the case of $\pi^0$ spectra, 
+the best level of agreement is met for \texttt{T9} and \texttt{T10} tunes
+with the notable exception of \texttt{ALEPH\_1996\_S3486095} (left panel of
+Fig. \ref{Fig.3}). We note that the size of uncertainty envelopes
+in Fig. \ref{Fig.4} is small compared to the other
+$\pi^{0;\pm}$ spectra. \\ \\ \\ 
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/ALEPH_1996_S3486095_d29-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/SLD_1999_S3743934_d01-x01-y02.pdf}
+  \caption{$\pi^0$ spectrum (\texttt{ALEPH$\_$1996$\_$S3486095}) \cite{Barate:1996fi} 
+  (left panel)  and $\pi^\pm$ spectrum (\texttt{SLD$\_$1999$\_$S3743934}) \cite{Abe:1998zs} (right panel).}
+ \label{Fig.3}
+\end{figure}
+
+
+\begin{figure}[!t]
+\centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/OPAL_1998_S3749908_d04-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/OPAL_1998_S3749908_d05-x01-y01.pdf}
+ \caption{$\pi^0$ spectrum. Data from \texttt{OPAL$\_$1998$\_$S3749908} \cite{Ackerstaff:1998ap}.}
+ \label{Fig.4}
+\end{figure}
+
+In Figs. \ref{Fig.5}-\ref{Fig.7}, we show the scaled
+momentum distributions for photons (Fig.\ref{Fig.5} and
+left panel of Fig.\ref{Fig.6}) and $\eta$ (right panel
+of Fig. \ref{Fig.6} and Fig.\ref{Fig.7}). We can see that
+the level of agreement between data and all the tunes
+is perfect for $\gamma$-spectrum (Fig. \ref{Fig.5}). While
+it is quite good for the $\gamma$-spectrum in 
+Figs.\ref{Fig.6}. We note that the 
+\texttt{T10} tune gives the best agreement between data and 
+theory for the latter observables. The size of uncertainty
+envelopes in Figs.\ref{Fig.5} is small. \\ \\
+In regard to $\eta$ spectrum, although the $\chi^2$ are 
+close to $2$, the different tunes fail to agree with the measurements
+in certain regions of the spectrum. This might be explained
+that in the process of tuning, a small weight was given to those
+observables and/or a $\eta$ suppression parameter in
+\texttt{Pythia8} was not included. Nevertheless, it is
+a satisfying result given that $\eta$ particles give a very small contribution
+to the photon sources at LEP.
+
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/OPAL_1998_S3749908_d03-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/OPAL_1998_S3749908_d02-x01-y01.pdf}
+  \caption{Photon scaled momentum. Data from \texttt{OPAL$\_$1998$\_$S3749908} \cite{Ackerstaff:1998ap}.}
+ \label{Fig.5}
+\end{figure}
+
+The inclusion of other observables as discriminators
+of the goodness of the tune is very important. We note that some 
+LEP measurements of event shapes and mean multiplicities severely constrain
+$\gamma$ and $\pi^\pm$ spectra. The most important constraint comes from
+scaled momentum distribution and charged multiplicity. 
+
+\begin{figure}[!t]
+\centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/ALEPH_1996_S3486095_d28-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/ALEPH_1996_S3486095_d30-x01-y01.pdf}
+ \caption{$\gamma$ spectrum (left panel) and $\eta$ spectrum (right panel). Data
+ from \texttt{ALEPH\_1996\_S3486095} \cite{Barate:1996fi}.}
+ \label{Fig.6}
+\end{figure}
+
+Furthemore, mean charged and $\pi^{0,\pm}$ multiplicities 
+constrain indirectly identified particle spectra (and especially
+the size of the uncertainty bands in those spectra). \\
+Some event shape observables such as the Thrust and sphericity
+are not very sensitive to the changes in the parameters of 
+the light quark fragmentation function. The allowed variations
+in the parameter space gives, however, large bands in certain
+regions that are sensitive to soft QCD (for example, the region
+where $T\simeq 1$). Hence, it is important to consider
+those observables for the selection of the best tunes. \\
+
+In Figs.\ref{Fig.8}-\ref{Fig.13}, we show the sphericity, thrust,
+heavy jet mass and rapidity \emph{w.r.t} thrust axis distributions.
+For the thrust distribution, the best level of agreement is met 
+for the \texttt{T9} and \texttt{T10} tunes. For the other observables,
+the agreement is quite good except in the case of \texttt{T1} and
+\texttt{T2} which use meson spectra and quark-to-photon fragmentation
+function observables only.
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/OPAL_1998_S3749908_d06-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mesons/OPAL_1998_S3749908_d07-x01-y01.pdf}
+ \caption{$\eta$ spectrum. Data from \texttt{OPAL$\_$1998$\_$S3749908} \cite{Ackerstaff:1998ap}.}
+ \label{Fig.7}
+\end{figure}
+
+In Figs.\ref{Fig.14}-\ref{Fig.16}, we show the scaled 
+momentum distribution. The observables correspond to 
+three different measurements; \texttt{ALEPH}, \texttt{DELPHI}
+and \texttt{L3}. Again, we can see that \texttt{T1} and \texttt{T2}
+do not give satisfying results. The other tunes gives very good
+agreement with data (and very nice uncertainty bands especially
+for \texttt{ALEPH} and \texttt{DELPHI} measurements). \\ \\
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_1996_S3486095_d01-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_2004_S5765862_d141-x01-y01.pdf}
+\caption{Sphericity distribution. Data from \texttt{ALEPH$\_$1996$\_$S3486095}
+\cite{Barate:1996fi} (left panel)  and  \texttt{ALEPH$\_$2004$\_$S5765862}
+\cite{Heister:2003aj} (right panel).}
+\label{Fig.8}
+\end{figure}
+
+In Fig.\ref{Fig.17}, we plot the charged particle multiplicity
+distribution. We remark that the different tunes
+agree quite well with data except the region of high multiplicity
+($n_\textrm{ch} \geq 40$), where the theoretical curves are 
+too skewed. \\
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.47\linewidth]{Figures/Event_shapes/DELPHI_1996_S3430090_d15-x01-y01.pdf}
+\hfill
+\includegraphics[width=0.47\linewidth]{Figures/Event_shapes/OPAL_2004_S6132243_d10-x01-y01.pdf}
+\caption{Sphericity distribution. Data from \texttt{DELPHI$\_$1996$\_$S3430090}
+\cite{Abreu:1996na} (left panel) and \texttt{OPAL\_2004\_S6132243} \cite{Abbiendi:2004qz}
+(right panel).}
+\label{Fig.9}
+\end{figure}
+
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_1996_S3486095_d03-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_2004_S5765862_d54-x01-y01.pdf}
+ \caption{Thrust distribution. Data from \texttt{ALEPH$\_$1996$\_$S3486095}
+\cite{Barate:1996fi} (left panel) and  \texttt{ALEPH$\_$2004$\_$S5765862}
+\cite{Heister:2003aj} (right panel)}.	
+\label{Fig.10}
+\end{figure}
+
+\begin{figure}[!t]
+ \centering
+\includegraphics[width=0.47\linewidth]{Figures/Event_shapes/DELPHI_1996_S3430090_d11-x01-y01.pdf}
+ \hfill
+\includegraphics[width=0.47\linewidth]{Figures/Event_shapes/OPAL_2004_S6132243_d01-x01-y01.pdf}
+ \caption{Thrust distribution. Data from \texttt{DELPHI$\_$1996$\_$S3430090}
+ \cite{Abreu:1996na} (left panel) and \texttt{OPAL\_2004\_S6132243} \cite{Abbiendi:2004qz}
+ (right panel).}
+ \label{Fig.11}
+\end{figure}
+
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_1996_S3486095_d10-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/DELPHI_1996_S3430090_d05-x01-y01.pdf}
+ \caption{Rapidity \emph{w.r.t} to thrust axis. Data from \texttt{ALEPH\_1996\_S3486095} \cite{Barate:1996fi} (left
+ panel) and \texttt{DELPHI\_1996\_S3430090} \cite{Abreu:1996na} (right panel).}
+ \label{Fig.12}
+\end{figure}
+
+
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_1996_S3486095_d06-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_2004_S5765862_d62-x01-y01.pdf}
+ \caption{Heavy jet mass. Data from \texttt{ALEPH$\_$1996$\_$S3486095} \cite{Barate:1996fi} 
+ (left panel) and \texttt{ALEPH$\_$2004$\_$S5765862} \cite{Heister:2003aj} (right panel)}.
+\label{Fig.13}
+\end{figure}
+
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_1996_S3486095_d09-x01-y01.pdf}
+ \hfill
+  \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/DELPHI_1996_S3430090_d07-x01-y01.pdf}
+  \caption{Scaled momentum distribution. Data from \texttt{ALEPH\_1996\_S3486095} \cite{Barate:1996fi} (left panel)
+  and \texttt{DELPHI\_1996\_S3430090} \cite{Abreu:1996na}.}
+  \label{Fig.14}
+\end{figure}
+
+\begin{figure}[!t]
+ \centering
+  \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/ALEPH_1996_S3486095_d17-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/DELPHI_1996_S3430090_d08-x01-y01.pdf}
+   \caption{Log of scaled momentum distribution. Data from \texttt{ALEPH\_1996\_S3486095} \cite{Barate:1996fi} (left panel)
+  and \texttt{DELPHI\_1996\_S3430090} \cite{Abreu:1996na}.}
+  \label{Fig.15}
+\end{figure}
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/L3_2004_I652683_d65-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/L3_2004_I652683_d65-x01-y02.pdf}
+ \caption{Scaled momentum of charged particles; all events (left panel) and $udsc$ events (right
+ panel). Data from \texttt{L3\_2004\_I652683} \cite{Achard:2004sv}.}
+ \label{Fig.16}
+\end{figure}
+
+Jet rates are depicted in Figs.\ref{Fig.18} and \ref{Fig.19}. I notice here that this behavior
+remains the same even if we change the of those observables in the tunes.
+This confirms the fact that including jet rates do not modify too much the 
+results of the tunes as was seen first in Tables \ref{Table.tunes} and 
+\ref{Table.tunes1}.
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Nch/ALEPH_1991_S2435284_d01-x01-y01.pdf}
+ \caption{Charged particle multiplicity. Data from \texttt{ALEPH\_1991\_S2435284} \cite{Decamp:1991uz}.}
+ \label{Fig.17}
+\end{figure}
+
+
+\begin{figure}[!h]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/DELPHI_1996_S3430090_d27-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Event_shapes/DELPHI_1996_S3430090_d28-x01-y01.pdf}
+ \caption{Differential $3$-jet rate with Durham algorithm (left) and with Jade algorithm
+ (right). Data from \texttt{DELPHI\_1996\_S3430090} \cite{Abreu:1996na}.}
+ \label{Fig.18}
+\end{figure}
+
+
+\begin{figure}[!h]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Jet_rates/ALEPH_2004_S5765862_d149-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Jet_rates/ALEPH_2004_S5765862_d157-x01-y01.pdf}
+ \caption{Durham $2\to1$ (left) and $3\to2$ jet resolution (right panel). Data from \texttt{ALEPH\_2004\_S5765862}
+ \cite{Heister:2003aj}.}
+ \label{Fig.19}
+\end{figure}
+
+We plot the mean charged multiplicity in Figs. \ref{Fig.20}-\ref{Fig.22}, 
+$\pi^0$ mean multiplicity in Fig.\ref{Fig.23} and $\pi^\pm$ charged
+multiplicity in Fig.\ref{Fig.24}. We can see 
+that the agreement between theory and data for all the tunes is very
+with some notable exceptions. 
+ 
+\begin{figure}[!h]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/ALEPH_1996_S3486095_d19-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/DELPHI_1996_S3430090_d35-x01-y01.pdf}
+ \caption{Mean charged multiplicity. Data from \texttt{ALEPH\_1996\_S3486095} \cite{Barate:1996fi} (left panel)
+ and \texttt{DELPHI\_1996\_S3430090} \cite{Abreu:1996na} (right panel).}
+ \label{Fig.20}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/ALEPH_1996_S3486095_d20-x01-y01.pdf}
+\hfill
+\includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/ALEPH_1996_S3486095_d21-x01-y01.pdf}
+\caption{Mean charged multiplicity for $|Y|<0.5$ (left panel) and $|Y|<1.0$ (right panel). Data
+from \texttt{ALEPH\_1996\_S3486095} \cite{Barate:1996fi}.}
+\label{Fig.21}
+\end{figure}
+
+\begin{figure}[!h]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/ALEPH_1996_S3486095_d22-x01-y01.pdf}
+ \hfill
+\includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/ALEPH_1996_S3486095_d23-x01-y01.pdf}
+\caption{Mean charged multiplicity for $|Y|<1.5$ (left panel) and $|Y|<2.0$ (right panel). Data
+from \texttt{ALEPH\_1996\_S3486095} \cite{Barate:1996fi}.}
+\label{Fig.22}
+\end{figure}
+
+\begin{figure}[!h]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/ALEPH_1996_S3486095_d44-x01-y02.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/DELPHI_1996_S3430090_d36-x01-y02.pdf}
+\hfill
+\includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/PDG_HADRON_MULTIPLICITIES_d02-x01-y03.pdf}
+\caption{$\pi^0$ mean multiplicity. Data from \texttt{ALEPH\_1996\_S3486095} \cite{Barate:1996fi} (left
+panel), \texttt{DELPHI\_1996\_S3430090} \cite{Abreu:1996na} (middle panel)
+and \texttt{PDG\_HADRON\_MULTIPLICITIES} \cite{Amsler:2008zzb} (right panel).}
+\label{Fig.23}
+\end{figure}
+
+\begin{figure}[!h]
+ \centering
+ \includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/DELPHI_1996_S3430090_d36-x01-y01.pdf}
+ \hfill
+ \includegraphics[width=0.47\linewidth]{Figures/Mean_multiplicities/PDG_HADRON_MULTIPLICITIES_d01-x01-y03.pdf}
+ \caption{$\pi^\pm$ mean multiplicity. Data from \texttt{DELPHI\_1996\_S3430090} \cite{Barate:1996fi} (left panel)
+ and \texttt{PDG\_HADRON\_MULTIPLICITIES} \cite{Amsler:2008zzb} (right panel)}
+ \label{Fig.24}
+\end{figure}
 
 
 \clearpage
+\section{Conclusions}
+
 \appendix
 \section{Observables and their weights}
  \begin{table}[!h]
@@ -369,18 +719,14 @@ respect to the central tune.
     \hline 
     \hline
     Observable  \hspace{3cm} &  \hspace{1cm} Associated Weight \\ \hline
-    $\pi^0$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\pi^\pm$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\rho$ spectrum &\hspace{3cm} $1.0$ \\ \hline
-    $K^{*0,\pm}$ spectrum &\hspace{3cm} $1.0$ \\ \hline
-    $\omega$ spectrum & \hspace{3cm} $1.0$ \\ \hline
-    $K^0$ spectrum & \hspace{3cm} $1.0$ \\ \hline
-    $\eta'$ spectrum & \hspace{3cm} $1.0$ \\ \hline
-    $\gamma$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\eta$ spectrum & \hspace{3cm} $1.0$ \\ \hline \hline
+    $\pi^0$ spectrum         & \hspace{3cm} $30.0$ \\ \hline
+    $\pi^\pm$ spectrum       & \hspace{3cm} $30.0$ \\ \hline
+    $\gamma$ spectrum        & \hspace{3cm} $30.0$ \\ \hline
+    $\eta$ spectrum          & \hspace{3cm} $1.0$ \\ \hline \hline
    \end{tabular}
   \end{center}
-  \caption{Identified photon and meson spectra and their weights.}
+  \caption{Identified photon and meson spectra and their weights. Data from
+  \cite{Buskulic:1994ft, Barate:1996fi, Heister:2001kp, Adriani:1992hd, Akers:1994ez, Ackerstaff:1998ap, Abe:1998zs}.}
   \label{Tab1}
  \end{table}
  
@@ -389,19 +735,20 @@ respect to the central tune.
    \begin{tabular}{l|l}
     \hline 
     \hline
-    Observable  \hspace{3cm} &  \hspace{1cm} Associated Weight \\ \hline
-    Mean charged multiplicity & \hspace{3cm} $50.0$ \\ \hline
-    Mean $\pi^0, \pi^\pm$ multiplicity & \hspace{3cm} $50.0$ \\ \hline
-    Mean $\rho$ multiplicity &\hspace{3cm} $1.0$ \\ \hline
-    Mean $K^{*0}$ multiplicity &\hspace{3cm} $1.0$ \\ \hline
-    Mean $\omega$ multiplicity & \hspace{3cm} $1.0$ \\ \hline
-    Mean $K^0$ multiplicity & \hspace{3cm} $1.0$ \\ \hline
-    Mean $K_S + K_L$ multiplicity & \hspace{3cm} $1.0$ \\ \hline
-    Mean $\eta'$ multiplicity & \hspace{3cm} $1.0$ \\ \hline
-    Mean $\eta$ multiplicity & \hspace{3cm} $1.0$ \\ \hline \hline
-   \end{tabular}
+    Observable  \hspace{3cm}                             & \hspace{1cm} Associated Weight \\ \hline
+    Mean charged multiplicity                            & \hspace{3cm} $10.0$ \\ \hline
+    Mean charged multiplicity for rapidity $|Y| < 0.5$   & \hspace{3cm} $10.0$ \\ \hline
+    Mean charged multiplicity for rapidity $|Y| < 1.0$   & \hspace{3cm} $10.0$ \\ \hline
+    Mean charged multiplicity for rapidity $|Y| < 1.5$   & \hspace{3cm} $10.0$ \\ \hline
+    Mean charged multiplicity for rapidity $|Y| < 2.0$   & \hspace{3cm} $10.0$ \\ \hline
+    Mean $\pi^0$ multiplicity                            & \hspace{3cm} $10.0$ \\ \hline
+    Mean $\pi^\pm$ multiplicity                          & \hspace{3cm} $10.0$ \\ \hline 
+    Ratio (w.r.t $\pi^\pm$) of mean $\pi^0$ multiplicity & \hspace{3cm} $5.0$ \\ \hline
+    \hline 
+    \end{tabular}
   \end{center}
-  \caption{Mean particle multiplicities and their weights.}
+  \caption{Mean particle multiplicities and their weights. 
+  Data from \cite{Barate:1996fi, Abreu:1996na, Ackerstaff:1998hz, Amsler:2008zzb}.}
   \label{Tab2}
  \end{table}
 
@@ -410,190 +757,234 @@ respect to the central tune.
    \begin{tabular}{l|l}
     \hline 
     \hline
-    Observable  \hspace{3cm} &  \hspace{1cm} Associated Weight \\ \hline
-    Differential $3$-jet rate with Durham algorithm & \hspace{3cm} $2.0$ \\ \hline
-    Differential $3$-jet rate with Jade algorithm & \hspace{3cm} $2.0$ \\ \hline
-    Differential $4$-jet rate with Durham algorithm &\hspace{3cm} $2.0$ \\ \hline
-    Differential $4$-jet rate with Jade algorithm &\hspace{3cm} $2.0$ \\ \hline
-    Differential $5$-jet rate with Durham algorithm & \hspace{3cm} $1.0$ \\ \hline
-    Differential $5$-jet rate with Jade algorithm & \hspace{3cm} $1.0$ \\ \hline \hline
+    Observable  \hspace{3cm}                                           &  \hspace{1cm} Associated Weight \\ \hline
+    Differential $3$-jet rate with Durham algorithm                    &  \hspace{3cm} $2.0$ \\ \hline
+    Differential $3$-jet rate with Jade algorithm                      &  \hspace{3cm} $2.0$ \\ \hline
+    Differential $4$-jet rate with Durham algorithm                    &  \hspace{3cm} $2.0$ \\ \hline
+    Differential $4$-jet rate with Jade algorithm                      &  \hspace{3cm} $2.0$ \\ \hline
+    Differential $5$-jet rate with Durham algorithm                    &  \hspace{3cm} $1.0$ \\ \hline
+    Differential $5$-jet rate with Jade algorithm                      &  \hspace{3cm} $1.0$ \\ \hline 
+    Durham jet resolution $2\to1  (E_{\text{CMS}}=91.2 \text{ GeV})$    &  \hspace{3cm} $2.0$ \\ \hline
+    Durham jet resolution $3\to2  (E_{\text{CMS}}=91.2 \text{ GeV})$    &  \hspace{3cm} $2.0$ \\ \hline
+    Durham jet resolution $4\to3  (E_{\text{CMS}}=91.2 \text{ GeV})$    &  \hspace{3cm} $1.0$ \\ \hline
+    Durham jet resolution $5\to4  (E_{\text{CMS}}=91.2 \text{ GeV})$    &  \hspace{3cm} $1.0$ \\ \hline
+    Durham jet resolution $6\to5  (E_{\text{CMS}}=91.2 \text{ GeV})$    &  \hspace{3cm} $1.0$ \\ \hline
+    $2$-jet fraction $(E_{\text{CMS}}=91.2 \text{ GeV})$               &  \hspace{3cm} $2.0$ \\ \hline
+    $3$-jet fraction $(E_{\text{CMS}}=91.2 \text{ GeV})$               &  \hspace{3cm} $2.0$ \\ \hline
+    $4$-jet fraction $(E_{\text{CMS}}=91.2 \text{ GeV})$               &  \hspace{3cm} $2.0$ \\ \hline
+    $5$-jet fraction $(E_{\text{CMS}}=91.2 \text{ GeV})$               &  \hspace{3cm} $1.0$ \\ \hline
+    $\geq 6$-jet fraction $(E_{\text{CMS}}=91.2 \text{ GeV})$          &  \hspace{3cm} $1.0$ \\ \hline \hline
    \end{tabular}
   \end{center}
-  \caption{Jet rates and their weights}
+  \caption{Jet rates and their weights. Data from \cite{Abreu:1996na, Heister:2003aj}.}
   \label{Tab3}
  \end{table}
  
-  \begin{table}[tbp]
+\begin{table}[tbp]
 \begin{center}
 \begin{tabular}{l|l}
 \hline \hline 
-Observable \hspace{1cm} &  Associated Weight \\ \hline
-In(out-)-plane $p_\bot$ in GeV w.r.t. (thrust) sphericity axes & \hspace{1cm} $1.0$ \\ \hline 
-Mean out-of-plane $p_\bot$ in GeV w.r.t. thrust axis vs. $x_p$ & \hspace{1cm} $1.0$ \\ \hline
-Scaled momentum $x_p=|p|/|p_\text{beam}|$ & \hspace{1cm} $1.0$ \\ \hline
-Log of scaled momentum, $\log(1/x_p)$ & \hspace{1cm} $1.0$ \\ \hline
-Energy-energy correlation, EEC & \hspace{1cm} $1.0$ \\ \hline
-Sphericity, $S$ & \hspace{1cm} $1.0$ \\ \hline
-Aplanarity, $A$ & \hspace{1cm} $1.0$ \\ \hline
-Planarity, $P$ & \hspace{1cm} $1.0$ \\ \hline
-$D$ parameter & \hspace{1cm} $1.0$ \\ \hline
-$C$ parameter & \hspace{1cm} $1.0$ \\ \hline
-1-Thrust & \hspace{1cm} $1.0$ \\ \hline
-Thrust major, $M$ & \hspace{1cm} $1.0$ \\ \hline
-Thrust minor, $m$ & \hspace{1cm} $1.0$\\ \hline
-Oblateness, $O=M-m$ &  \hspace{1cm} $1.0$ \\ \hline
-Charged multiplicity distribution  & \hspace{1cm} $1.0$ \\ \hline
-Mean charged multiplicity & \hspace{1cm} $1.0$ \\ \hline
+Observable \hspace{1cm}                                        &  Associated Weight \\ \hline
+In(out-)-plane $p_\bot$ in GeV w.r.t. (thrust) sphericity axes & \hspace{1cm} $2.0$ \\ \hline 
+Mean out-of-plane $p_\bot$ in GeV w.r.t. thrust axis vs. $x_p$ & \hspace{1cm} $2.0$ \\ \hline
+Scaled momentum $x_p=|p|/|p_\text{beam}|$                      & \hspace{1cm} $20.0$ \\ \hline
+Log of scaled momentum, $\log(1/x_p)$                          & \hspace{1cm} $20.0$ \\ \hline
+Energy-energy correlation, EEC                                 & \hspace{1cm} $2.0$ \\ \hline
+Sphericity, $S$                                                & \hspace{1cm} $2.0$ \\ \hline
+Aplanarity, $A$                                                & \hspace{1cm} $2.0$ \\ \hline
+Planarity, $P$                                                 & \hspace{1cm} $2.0$ \\ \hline
+$D$ parameter                                                  & \hspace{1cm} $2.0$ \\ \hline
+$C$ parameter                                                  & \hspace{1cm} $2.0$ \\ \hline
+1-Thrust                                                       & \hspace{1cm} $2.0$ \\ \hline
+Thrust major, $M$                                              & \hspace{1cm} $2.0$ \\ \hline
+Thrust minor, $m$                                              & \hspace{1cm} $2.0$\\ \hline
+Oblateness, $O=M-m$                                            & \hspace{1cm} $2.0$ \\ \hline
+Charged multiplicity distribution                              & \hspace{1cm} $2.0$ \\ \hline
+Two-jet resolution variable, $Y3$ (charged)                    & \hspace{1cm} $2.0$ \\ \hline
+Rapidity w.r.t. thrust axes, $y_T$ (charged)                   & \hspace{1cm} $2.0$ \\ \hline
+Heavy jet mass $(E_{\text{CMS}} = 91.2 \text{ GeV})$           & \hspace{1cm} $2.0$ \\ \hline
+Total jet broadening $(E_{\text{CMS}} = 91.2 \text{ GeV})$     & \hspace{1cm} $2.0$ \\ \hline
+Wide jet broadening $(E_{\text{CMS}} = 91.2 \text{ GeV})$      & \hspace{1cm} $2.0$ \\ \hline
+Jet mass difference $(E_{\text{CMS}} = 91.2 \text{ GeV})$      & \hspace{1cm} $2.0$ \\ \hline
 \hline
 \end{tabular}
 \end{center}
-\caption{Event shapes and the associated weights.}
+\caption{Event shapes and the associated weights. Data from 
+\cite{Decamp:1991uz, Barate:1996fi, Heister:2003aj, Abreu:1996na, Achard:2004sv, Abbiendi:2004qz}. }
 \label{Tab4}
  \end{table}
-
+ 
  \begin{table}[tbp]
   \begin{center}
-   \begin{tabular}{l|l}
-    \hline 
-    \hline
-    Observable  \hspace{3cm} &  \hspace{1cm} Associated Weight \\ \hline
-    $\pi^0$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\pi^\pm$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    Charged multiplicity &\hspace{3cm} $1.0$ \\ \hline
-    mean charged multiplicity &\hspace{3cm} $50.0$ \\ \hline
-    mean $\pi^{0,\pm}$ multiplicities & \hspace{3cm} $50.0$ \\ \hline
-    Scaled momentum (charged) & \hspace{3cm} $30.0$ \\ \hline
-    Scaled momentum & \hspace{3cm} $30.0$ \\ \hline
-    $\gamma$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\eta$ spectrum & \hspace{3cm} $1.0$ \\ \hline \hline
+   \begin{tabular}{l | l}
+\hline \hline
+Observable \hspace{1cm}                                        &  Associated Weight \\ \hline
+Rapidity w.r.t. sphericity axes, $y_S$                         & \hspace{1cm} $2.0$ \\ \hline
+Mean $p_\perp$ in GeV vs. $x_p$                                & \hspace{1cm} $2.0$ \\ \hline
+Planarity, $P$                                                 & \hspace{1cm} $2.0$ \\ \hline
+Heavy hemisphere masses, $M_h^2/E_\text{vis}$                  & \hspace{1cm} $2.0$ \\ \hline
+Light hemisphere masses, $M_l^2/E_\text{vis}$                  & \hspace{1cm} $2.0$ \\ \hline
+Difference in hemisphere masses, $M_d^2/E_\text{vis}$          & \hspace{1cm} $2.0$ \\ \hline
+Wide hemisphere broadening, $B_\text{max}$                     & \hspace{1cm} $2.0$ \\ \hline
+Narrow hemisphere broadening, $B_\text{min}$                   & \hspace{1cm} $2.0$ \\ \hline
+Total hemisphere broadening, $B_\text{sum}$                    & \hspace{1cm} $2.0$ \\ \hline
+Difference in hemisphere broadening, $B_\text{diff}$           & \hspace{1cm} $2.0$ \\ \hline
+Moments of $1 - T$ at $91$ GeV                                 & \hspace{1cm} $2.0$ \\ \hline
+Moments of $M_H$ at $91$ GeV                                   & \hspace{1cm} $2.0$ \\ \hline
+Moments of $C$ at $91$ GeV                                     & \hspace{1cm} $2.0$ \\ \hline
+Moments of $B_\text{sum}$ at $91$ GeV                          & \hspace{1cm} $2.0$ \\ \hline
+Moments of $B_\text{max}$ at $91$ GeV                          & \hspace{1cm} $2.0$ \\ \hline
+Moments of $y_{23}$ at $91$ GeV                                & \hspace{1cm} $2.0$ \\ \hline
+Moments of $T_\text{maj}$ at $91$ GeV                          & \hspace{1cm} $2.0$ \\ \hline
+Moments of $T_\text{min}$ at $91$ GeV                          & \hspace{1cm} $2.0$ \\ \hline
+Moments of $S$ at $91$ GeV                                     & \hspace{1cm} $2.0$ \\ \hline \hline    
    \end{tabular}
   \end{center}
-  \caption{observables included in \texttt{T3} tune.}
-  \label{Tab5}
+\caption{Event shapes and the associated weights (\emph{contd}). Data from 
+\cite{Decamp:1991uz, Barate:1996fi, Heister:2003aj, Abreu:1996na, Achard:2004sv, Abbiendi:2004qz}. }
+\label{Tab5}
+ \end{table}
+ 
+\begin{table}[tbp]
+ \begin{center}
+  \begin{tabular}{ l | l }
+\hline \hline
+Observable \hspace{1cm}                                                  &  Associated Weight \\ \hline
+Photon fragmentation function in $2$-jet events with $y_\text{cut}=0.01$ & \hspace{1cm} $1.0$ \\ \hline
+Photon fragmentation function in $2$-jet events with $y_\text{cut}=0.06$ & \hspace{1cm} $1.0$ \\ \hline
+Photon fragmentation function in $2$-jet events with $y_\text{cut}=0.1$  & \hspace{1cm} $1.0$ \\ \hline
+Photon fragmentation function in $2$-jet events with $y_\text{cut}=0.33$ & \hspace{1cm} $1.0$ \\ \hline
+Photon fragmentation function in $3$-jet events with $y_\text{cut}=0.01$ & \hspace{1cm} $1.0$ \\ \hline
+Photon fragmentation function in $3$-jet events with $y_\text{cut}=0.06$ & \hspace{1cm} $1.0$ \\ \hline
+Photon fragmentation function in $3$-jet events with $y_\text{cut}=0.1$  & \hspace{1cm} $1.0$ \\ \hline
+Photon fragmentation function in $4$-jet events with $y_\text{cut}=0.01$ & \hspace{1cm} $1.0$ \\ \hline
+\hline
+  \end{tabular}
+ \end{center}
+ \caption{Quark-to-photon fragmentation function observables and the 
+ corresponding weights. Data from \cite{Buskulic:1995au}. }
+ \label{Tab6}
 \end{table}
 
- \begin{table}[tbp]
-  \begin{center}
-   \begin{tabular}{l|l}
-    \hline 
-    \hline
-    Observable  \hspace{3cm} &  \hspace{1cm} Associated Weight \\ \hline
-    $\pi^0$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\pi^\pm$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    mean $\pi^{0,\pm}$ multiplicities & \hspace{3cm} $50.0$ \\ \hline
-    Scaled momentum (charged) & \hspace{3cm} $30.0$ \\ \hline
-    Scaled momentum & \hspace{3cm} $30.0$ \\ \hline
-    $\gamma$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\eta$ spectrum & \hspace{3cm} $1.0$ \\ \hline \hline
-   \end{tabular}
-  \end{center}
-  \caption{observables included in \texttt{T4} tune.}
-  \label{Tab6}
-\end{table}
 
- \begin{table}[tbp]
-  \begin{center}
-   \begin{tabular}{l|l}
-    \hline 
-    \hline
-    Observable  \hspace{3cm} &  \hspace{1cm} Associated Weight \\ \hline
-    $\pi^0$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\pi^\pm$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\gamma$ spectrum & \hspace{3cm} $30.0$ \\ \hline
-    $\eta$ spectrum & \hspace{3cm} $1.0$ \\ \hline \hline
-   \end{tabular}
-  \end{center}
-  \caption{observables included in \texttt{T5} tune.}
-  \label{Tab7}
-\end{table}
 \clearpage 
 \begin{thebibliography}{99}
-\bibitem{Bertone:2004pz}
-  G.~Bertone, D.~Hooper and J.~Silk,
-  ``Particle dark matter: Evidence, candidates and constraints,''
-  Phys.\ Rept.\  {\bf 405} (2005) 279
-  doi:10.1016/j.physrep.2004.08.031
-  [hep-ph/0404175].
+
+\bibitem{Decamp:1991uz}
+  D.~Decamp {\it et al.} [ALEPH Collaboration],
+  %``Measurement of the charged particle multiplicity distribution in hadronic Z decays,''
+  Phys.\ Lett.\ B {\bf 273} (1991) 181.
+  doi:10.1016/0370-2693(91)90575-B
+  %%CITATION = doi:10.1016/0370-2693(91)90575-B;%%
   
- \bibitem{Barate:1996fi}
+\bibitem{Buskulic:1994ft}
+  D.~Buskulic {\it et al.} [ALEPH Collaboration],
+  %``Inclusive pi+-, K+- and (p, anti-p) differential cross-sections at the Z resonance,''
+  Z.\ Phys.\ C {\bf 66} (1995) 355.
+  doi:10.1007/BF01556360
+  %%CITATION = doi:10.1007/BF01556360;%%
+  
+\bibitem{Buskulic:1995au}
+  D.~Buskulic {\it et al.} [ALEPH Collaboration],
+  %``First measurement of the quark to photon fragmentation function,''
+  Z.\ Phys.\ C {\bf 69} (1996) 365.
+  doi:10.1007/BF02907417
+  %%CITATION = doi:10.1007/BF02907417;%%
+  
+\bibitem{Barate:1996fi}
   R.~Barate {\it et al.} [ALEPH Collaboration],
-  ``Studies of quantum chromodynamics with the ALEPH detector,''
+  %``Studies of quantum chromodynamics with the ALEPH detector,''
   Phys.\ Rept.\  {\bf 294} (1998) 1.
   doi:10.1016/S0370-1573(97)00045-8
+  %%CITATION = doi:10.1016/S0370-1573(97)00045-8;%%
   
-  \bibitem{Heister:2001jg}
+\bibitem{Heister:2001kp}
   A.~Heister {\it et al.} [ALEPH Collaboration],
-  ``Study of the fragmentation of b quarks into B mesons at the Z peak,''
-  Phys.\ Lett.\ B {\bf 512} (2001) 30
-  doi:10.1016/S0370-2693(01)00690-6
-  [hep-ex/0106051].
-  
-  \bibitem{Heister:2001kp}
-  A.~Heister {\it et al.} [ALEPH Collaboration],
-  ``Inclusive production of the omega and eta mesons in Z decays, and the muonic branching ratio of the omega,''
+  %``Inclusive production of the omega and eta mesons in Z decays, and the muonic branching ratio of the omega,''
   Phys.\ Lett.\ B {\bf 528} (2002) 19
   doi:10.1016/S0370-2693(02)01220-0
   [hep-ex/0201012].
+  %%CITATION = doi:10.1016/S0370-2693(02)01220-0;%%
   
-  \bibitem{Abreu:1996na}
+\bibitem{Heister:2003aj}
+  A.~Heister {\it et al.} [ALEPH Collaboration],
+  %``Studies of QCD at e+ e- centre-of-mass energies between 91-GeV and 209-GeV,''
+  Eur.\ Phys.\ J.\ C {\bf 35} (2004) 457.
+  doi:10.1140/epjc/s2004-01891-4
+  %%CITATION = doi:10.1140/epjc/s2004-01891-4;%%
+  
+\bibitem{Abreu:1996na}
   P.~Abreu {\it et al.} [DELPHI Collaboration],
-  ``Tuning and test of fragmentation models based on identified particles and precision event shape data,''
+  %``Tuning and test of fragmentation models based on identified particles and precision event shape data,''
   Z.\ Phys.\ C {\bf 73} (1996) 11.
   doi:10.1007/s002880050295
+  %%CITATION = doi:10.1007/s002880050295;%%
   
-  \bibitem{Abreu:1998nn}
-  P.~Abreu {\it et al.} [DELPHI Collaboration],
-  ``Measurement of inclusive rho0, f(0)(980), f(2)(1270), K*0(2)(1430) and f-prime(2)(1525) production in Z0 decays,''
-  Phys.\ Lett.\ B {\bf 449} (1999) 364.
-  doi:10.1016/S0370-2693(99)00105-7
+
+\bibitem{Adriani:1992hd}
+  O.~Adriani {\it et al.} [L3 Collaboration],
+  %``Measurement of inclusive eta production in hadronic decays of the Z0,''
+  Phys.\ Lett.\ B {\bf 286} (1992) 403.
+  doi:10.1016/0370-2693(92)91795-B
+  %%CITATION = doi:10.1016/0370-2693(92)91795-B;%%
   
-  \bibitem{DELPHI_2002}
-  Study of the b-quark fragmentation function at LEP 1, 
-  DELPHI note 2002-069-CONF-603 (ICHEP 2002)
+\bibitem{Achard:2004sv}
+  P.~Achard {\it et al.} [L3 Collaboration],
+  %``Studies of hadronic event structure in $e^{+} e^{-}$ annihilation from 30-GeV to 209-GeV with the L3 detector,''
+  Phys.\ Rept.\  {\bf 399} (2004) 71
+  doi:10.1016/j.physrep.2004.07.002
+  [hep-ex/0406049].
+  %%CITATION = doi:10.1016/j.physrep.2004.07.002;%%
   
-  \bibitem{Akers:1994ez}
+\bibitem{Akers:1994ez}
   R.~Akers {\it et al.} [OPAL Collaboration],
-  ``Measurement of the production rates of charged hadrons in e+ e- annihilation at the Z0,''
+  %``Measurement of the production rates of charged hadrons in e+ e- annihilation at the Z0,''
   Z.\ Phys.\ C {\bf 63} (1994) 181.
   doi:10.1007/BF01411010
+  %%CITATION = doi:10.1007/BF01411010;%%
   
-  \bibitem{Ackerstaff:1998ap}
+  
+\bibitem{Ackerstaff:1998ap}
   K.~Ackerstaff {\it et al.} [OPAL Collaboration],
-  ``Photon and light meson production in hadronic Z0 decays,''
+  %``Photon and light meson production in hadronic Z0 decays,''
   Eur.\ Phys.\ J.\ C {\bf 5} (1998) 411
   doi:10.1007/s100520050286
   [hep-ex/9805011].
+  %%CITATION = doi:10.1007/s100520050286;%%
   
-  \bibitem{Abbiendi:2000cv}
+\bibitem{Ackerstaff:1998hz}
+  K.~Ackerstaff {\it et al.} [OPAL Collaboration],
+  %``Measurements of flavor dependent fragmentation functions in Z0 --> q anti-q events,''
+  Eur.\ Phys.\ J.\ C {\bf 7} (1999) 369
+  doi:10.1007/s100529901067
+  [hep-ex/9807004].
+  %%CITATION = doi:10.1007/s100529901067;%%
+  
+\bibitem{Abbiendi:2004qz}
   G.~Abbiendi {\it et al.} [OPAL Collaboration],
-  ``Multiplicities of pi0, eta, K0 and of charged particles in quark and gluon jets,''
-  Eur.\ Phys.\ J.\ C {\bf 17} (2000) 373
-  doi:10.1007/s100520000505
-  [hep-ex/0007017].
+  %``Measurement of event shape distributions and moments in e+ e- ---> hadrons at 91-GeV - 209-GeV and a determination of alpha(s),''
+  Eur.\ Phys.\ J.\ C {\bf 40} (2005) 287
+  doi:10.1140/epjc/s2005-02120-6
+  [hep-ex/0503051].
+  %%CITATION = doi:10.1140/epjc/s2005-02120-6;%%
   
-  \bibitem{Abe:1996zi}
+\bibitem{Abe:1998zs}
   K.~Abe {\it et al.} [SLD Collaboration],
-  ``Measurement of the charged multiplicities in b, c and light quark events from Z0 decays,''
-  Phys.\ Lett.\ B {\bf 386} (1996) 475
-  doi:10.1016/0370-2693(96)01025-8
-  [hep-ex/9608008].
-  
-  \bibitem{Abe:1998zs}
-  K.~Abe {\it et al.} [SLD Collaboration],
-  ``Production of pi+, K+, K0, K*0, phi, p and Lambda0 in hadronic Z0 decays,''
+  %``Production of pi+, K+, K0, K*0, phi, p and Lambda0 in hadronic Z0 decays,''
   Phys.\ Rev.\ D {\bf 59} (1999) 052001
   doi:10.1103/PhysRevD.59.052001
   [hep-ex/9805029].
+  %%CITATION = doi:10.1103/PhysRevD.59.052001;%%
   
-  \bibitem{Abe:2002iq}
-  K.~Abe {\it et al.} [SLD Collaboration],
-  ``Measurement of the b quark fragmentation function in Z0 decays,''
-  Phys.\ Rev.\ D {\bf 65} (2002) 092006
-   Erratum: [Phys.\ Rev.\ D {\bf 66} (2002) 079905]
-  doi:10.1103/PhysRevD.66.079905, 10.1103/PhysRevD.65.092006
-  [hep-ex/0202031].
+\bibitem{Amsler:2008zzb}
+  C.~Amsler {\it et al.} [Particle Data Group],
+  %``Review of Particle Physics,''
+  Phys.\ Lett.\ B {\bf 667} (2008) 1.
+  doi:10.1016/j.physletb.2008.07.018
+  %%CITATION = doi:10.1016/j.physletb.2008.07.018;%%
   
-  \bibitem{Giele:2007di}
+  
+\bibitem{Giele:2007di}
   W.~T.~Giele, D.~A.~Kosower and P.~Z.~Skands,
   %``A simple shower and matching algorithm,''
   Phys.\ Rev.\ D {\bf 78} (2008) 014026
@@ -601,68 +992,24 @@ Mean charged multiplicity & \hspace{1cm} $1.0$ \\ \hline
   [arXiv:0707.3652 [hep-ph]].
   %%CITATION = doi:10.1103/PhysRevD.78.014026;%%
   
-  \bibitem{Buckley:2011ms}
-  A.~Buckley {\it et al.},
-  ``General-purpose event generators for LHC physics,''
-  Phys.\ Rept.\  {\bf 504} (2011) 145
-  doi:10.1016/j.physrep.2011.03.005
-  [arXiv:1101.2599 [hep-ph]].
-  
-  \bibitem{Buckley:2009bj}
+\bibitem{Buckley:2009bj}
   A.~Buckley, H.~Hoeth, H.~Lacker, H.~Schulz and J.~E.~von Seggern,
-  ``Systematic event generator tuning for the LHC,''
+  %``Systematic event generator tuning for the LHC,''
   Eur.\ Phys.\ J.\ C {\bf 65} (2010) 331
   doi:10.1140/epjc/s10052-009-1196-7
   [arXiv:0907.2973 [hep-ph]].
+  %%CITATION = doi:10.1140/epjc/s10052-009-1196-7;%%
+
   
-  \bibitem{Buckley:2010ar}
+\bibitem{Buckley:2010ar}
   A.~Buckley, J.~Butterworth, L.~Lonnblad, D.~Grellscheid, H.~Hoeth, J.~Monk, H.~Schulz and F.~Siegert,
-  ``Rivet user manual,''
+  %``Rivet user manual,''
   Comput.\ Phys.\ Commun.\  {\bf 184} (2013) 2803
   doi:10.1016/j.cpc.2013.05.021
   [arXiv:1003.0694 [hep-ph]].
+  %%CITATION = doi:10.1016/j.cpc.2013.05.021;%%
   
-  \bibitem{Sjostrand:2006za}
-  T.~Sjostrand, S.~Mrenna and P.~Z.~Skands,
-  ``PYTHIA 6.4 Physics and Manual,''
-  JHEP {\bf 0605} (2006) 026
-  doi:10.1088/1126-6708/2006/05/026
-  [hep-ph/0603175].
-  
-  \bibitem{Sjostrand:2007gs}
-  T.~Sjostrand, S.~Mrenna and P.~Z.~Skands,
-  ``A Brief Introduction to PYTHIA 8.1,''
-  Comput.\ Phys.\ Commun.\  {\bf 178} (2008) 852
-  doi:10.1016/j.cpc.2008.01.036
-  [arXiv:0710.3820 [hep-ph]].
-  
-  \bibitem{Sjostrand:2014zea}
-  T.~Sjöstrand {\it et al.},
-  ``An Introduction to PYTHIA 8.2,''
-  Comput.\ Phys.\ Commun.\  {\bf 191} (2015) 159
-  doi:10.1016/j.cpc.2015.01.024
-  [arXiv:1410.3012 [hep-ph]].
-  
-  \bibitem{Skands:2014pea}
-  P.~Skands, S.~Carrazza and J.~Rojo,
-  ``Tuning PYTHIA 8.1: the Monash 2013 Tune,''
-  Eur.\ Phys.\ J.\ C {\bf 74} (2014) no.8,  3024
-  doi:10.1140/epjc/s10052-014-3024-y
-  [arXiv:1404.5630 [hep-ph]].
-  
-  \bibitem{Cembranos:2013cfa}
-  J.~A.~R.~Cembranos, A.~de la Cruz-Dombriz, V.~Gammaldi, R.~A.~Lineros and A.~L.~Maroto,
-  ``Reliability of Monte Carlo event generators for gamma ray dark matter searches,''
-  JHEP {\bf 1309} (2013) 077
-  doi:10.1007/JHEP09(2013)077
-  [arXiv:1305.2124 [hep-ph]].
 
-    \bibitem{Bowler:1981sb}
-  M.~G.~Bowler,
-  ``e+ e- Production of Heavy Quarks in the String Model,''
-  Z.\ Phys.\ C {\bf 11} (1981) 169.
-  doi:10.1007/BF01574001
- 
 \end{thebibliography}
 
 \end{document}          
