@@ -1,0 +1,126 @@
+# BEGIN PLOT
+LegendOnly=/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/OPAL_1993_S2692198/d03-x01-y03
+DrawOnly=/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/OPAL_1993_S2692198/d03-x01-y03 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/OPAL_1993_S2692198/d03-x01-y03
+Title=Number of 3 jet events vs $y_{\rm cut}$, Jade
+RatioPlotReference=/OPAL_1993_S2692198/d03-x01-y03
+RatioPlot=1
+LogY=1
+LegendXPos=0.50
+XLabel=$y_{\rm cut}$
+YLabel=No. of 3 jet events/1000 MH
+LegendYPos=0.85
+Legend=1
+FullRange=1
+# END PLOT
+
+# BEGIN HISTO1D /OPAL_1993_S2692198/d03-x01-y03
+ConnectBins=0
+ErrorBars=1
+IsRef=1
+Path=/OPAL_1993_S2692198/d03-x01-y03
+PolyMarker=*
+Title=Data
+# xlow	 xhigh	 val	 errminus	 errplus
+2.500000e-03	7.500000e-03	2.770000e+00	4.167733e-01	4.167733e-01
+7.500000e-03	1.500000e-02	2.020000e+00	2.662705e-01	2.662705e-01
+1.500000e-02	3.000000e-02	9.900000e-01	1.204159e-01	1.204159e-01
+3.000000e-02	5.000000e-02	2.300000e-01	4.123106e-02	4.123106e-02
+5.000000e-02	7.000000e-02	8.000000e-02	2.000000e-02	2.000000e-02
+7.000000e-02	9.000000e-02	2.000000e-02	1.000000e-02	1.000000e-02
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/OPAL_1993_S2692198/d03-x01-y03
+IsRef=1
+LineColor=red
+LineStyle=solid
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/OPAL_1993_S2692198/d03-x01-y03
+ScaledBy=5.00000000000000010e-04
+Title=nominal
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+2.500000e-03	7.500000e-03	9.681000e+00	6.957370e-02	6.957370e-02
+7.500000e-03	1.500000e-02	3.817000e+00	4.368638e-02	4.368638e-02
+1.500000e-02	3.000000e-02	1.359500e+00	2.607201e-02	2.607201e-02
+3.000000e-02	5.000000e-02	4.010000e-01	1.415980e-02	1.415980e-02
+5.000000e-02	7.000000e-02	1.015000e-01	7.123903e-03	7.123903e-03
+7.000000e-02	9.000000e-02	2.700000e-02	3.674235e-03	3.674235e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/OPAL_1993_S2692198/d03-x01-y03
+IsRef=1
+LineColor=red
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/OPAL_1993_S2692198/d03-x01-y03
+ScaledBy=5.00000000000000010e-04
+Title=$\Delta\rho=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+2.500000e-03	7.500000e-03	9.728000e+00	6.974238e-02	6.974238e-02
+7.500000e-03	1.500000e-02	3.935500e+00	4.435932e-02	4.435932e-02
+1.500000e-02	3.000000e-02	1.364500e+00	2.611991e-02	2.611991e-02
+3.000000e-02	5.000000e-02	4.110000e-01	1.433527e-02	1.433527e-02
+5.000000e-02	7.000000e-02	1.080000e-01	7.348469e-03	7.348469e-03
+7.000000e-02	9.000000e-02	2.800000e-02	3.741657e-03	3.741657e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/OPAL_1993_S2692198/d03-x01-y03
+IsRef=1
+LineColor=red
+LineStyle=dotdashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/OPAL_1993_S2692198/d03-x01-y03
+ScaledBy=5.00000000000000010e-04
+Title=$\Delta\rho=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+2.500000e-03	7.500000e-03	9.637500e+00	6.941720e-02	6.941720e-02
+7.500000e-03	1.500000e-02	3.843500e+00	4.383776e-02	4.383776e-02
+1.500000e-02	3.000000e-02	1.352000e+00	2.600000e-02	2.600000e-02
+3.000000e-02	5.000000e-02	3.730000e-01	1.365650e-02	1.365650e-02
+5.000000e-02	7.000000e-02	1.020000e-01	7.141428e-03	7.141428e-03
+7.000000e-02	9.000000e-02	2.750000e-02	3.708099e-03	3.708099e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/OPAL_1993_S2692198/d03-x01-y03
+IsRef=1
+LineColor=blue
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/OPAL_1993_S2692198/d03-x01-y03
+ScaledBy=5.00000500000499998e-04
+Title=$\Delta\eta=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+2.500000e-03	7.500000e-03	9.702510e+00	6.965099e-02	6.965099e-02
+7.500000e-03	1.500000e-02	3.837504e+00	4.380358e-02	4.380358e-02
+1.500000e-02	3.000000e-02	1.365001e+00	2.612473e-02	2.612473e-02
+3.000000e-02	5.000000e-02	3.945004e-01	1.404459e-02	1.404459e-02
+5.000000e-02	7.000000e-02	1.090001e-01	7.382418e-03	7.382418e-03
+7.000000e-02	9.000000e-02	3.100003e-02	3.937008e-03	3.937008e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/OPAL_1993_S2692198/d03-x01-y03
+IsRef=1
+LineColor=blue
+LineStyle=dotdashed
+LineWidth=1.3pt$
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/OPAL_1993_S2692198/d03-x01-y03
+ScaledBy=5.00000000000000010e-04
+Title=$\Delta\eta=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+2.500000e-03	7.500000e-03	9.629500e+00	6.938839e-02	6.938839e-02
+7.500000e-03	1.500000e-02	3.808500e+00	4.363772e-02	4.363772e-02
+1.500000e-02	3.000000e-02	1.410500e+00	2.655654e-02	2.655654e-02
+3.000000e-02	5.000000e-02	4.005000e-01	1.415097e-02	1.415097e-02
+5.000000e-02	7.000000e-02	1.100000e-01	7.416198e-03	7.416198e-03
+7.000000e-02	9.000000e-02	2.200000e-02	3.316625e-03	3.316625e-03
+# END HISTO1D
+

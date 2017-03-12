@@ -1,0 +1,132 @@
+# BEGIN PLOT
+LegendOnly=/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/OPAL_1993_S2692198/d04-x01-y04
+DrawOnly=/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/OPAL_1993_S2692198/d04-x01-y04 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/OPAL_1993_S2692198/d04-x01-y04
+Title=Number of $>3$ jet events vs $y_{\rm cut}$, Durham
+RatioPlotReference=/OPAL_1993_S2692198/d04-x01-y04
+RatioPlot=1
+LogY=1
+LegendXPos=0.50
+XLabel=$y_{\rm cut}$
+YLabel=No. of $>3$ jet events/1000 MH
+LegendYPos=0.85
+Legend=1
+FullRange=1
+# END PLOT
+
+# BEGIN HISTO1D /OPAL_1993_S2692198/d04-x01-y04
+ConnectBins=0
+ErrorBars=1
+IsRef=1
+Path=/OPAL_1993_S2692198/d04-x01-y04
+PolyMarker=*
+Title=Data
+# xlow	 xhigh	 val	 errminus	 errplus
+1.000000e-03	3.000000e-03	9.200000e-01	1.627882e-01	1.627882e-01
+3.000000e-03	5.000000e-03	3.200000e-01	5.830952e-02	5.830952e-02
+5.000000e-03	7.000000e-03	1.900000e-01	4.472136e-02	4.472136e-02
+7.000000e-03	9.000000e-03	1.300000e-01	4.123106e-02	4.123106e-02
+9.000000e-03	1.100000e-02	6.000000e-02	3.000000e-02	3.000000e-02
+1.100000e-02	1.300000e-02	3.000000e-02	2.000000e-02	2.000000e-02
+1.300000e-02	1.500000e-02	3.000000e-02	2.000000e-02	2.000000e-02
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/OPAL_1993_S2692198/d04-x01-y04
+IsRef=1
+LineColor=red
+LineStyle=solid
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/OPAL_1993_S2692198/d04-x01-y04
+ScaledBy=5.00000000000000010e-04
+Title=nominal
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+1.000000e-03	3.000000e-03	2.511000e+00	3.543304e-02	3.543304e-02
+3.000000e-03	5.000000e-03	6.585000e-01	1.814525e-02	1.814525e-02
+5.000000e-03	7.000000e-03	2.645000e-01	1.150000e-02	1.150000e-02
+7.000000e-03	9.000000e-03	1.275000e-01	7.984360e-03	7.984360e-03
+9.000000e-03	1.100000e-02	6.850000e-02	5.852350e-03	5.852350e-03
+1.100000e-02	1.300000e-02	4.000000e-02	4.472136e-03	4.472136e-03
+1.300000e-02	1.500000e-02	2.300000e-02	3.391165e-03	3.391165e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/OPAL_1993_S2692198/d04-x01-y04
+IsRef=1
+LineColor=red
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/OPAL_1993_S2692198/d04-x01-y04
+ScaledBy=5.00000000000000010e-04
+Title=$\Delta\rho=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+1.000000e-03	3.000000e-03	2.565500e+00	3.581550e-02	3.581550e-02
+3.000000e-03	5.000000e-03	6.575000e-01	1.813146e-02	1.813146e-02
+5.000000e-03	7.000000e-03	2.830000e-01	1.189538e-02	1.189538e-02
+7.000000e-03	9.000000e-03	1.430000e-01	8.455767e-03	8.455767e-03
+9.000000e-03	1.100000e-02	7.800000e-02	6.244998e-03	6.244998e-03
+1.100000e-02	1.300000e-02	4.000000e-02	4.472136e-03	4.472136e-03
+1.300000e-02	1.500000e-02	2.750000e-02	3.708099e-03	3.708099e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/OPAL_1993_S2692198/d04-x01-y04
+IsRef=1
+LineColor=red
+LineStyle=dotdashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/OPAL_1993_S2692198/d04-x01-y04
+ScaledBy=5.00000000000000010e-04
+Title=$\Delta\rho=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+1.000000e-03	3.000000e-03	2.519500e+00	3.549296e-02	3.549296e-02
+3.000000e-03	5.000000e-03	6.365000e-01	1.783956e-02	1.783956e-02
+5.000000e-03	7.000000e-03	2.700000e-01	1.161895e-02	1.161895e-02
+7.000000e-03	9.000000e-03	1.430000e-01	8.455767e-03	8.455767e-03
+9.000000e-03	1.100000e-02	8.250000e-02	6.422616e-03	6.422616e-03
+1.100000e-02	1.300000e-02	4.700000e-02	4.847680e-03	4.847680e-03
+1.300000e-02	1.500000e-02	3.100000e-02	3.937004e-03	3.937004e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/OPAL_1993_S2692198/d04-x01-y04
+IsRef=1
+LineColor=blue
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/OPAL_1993_S2692198/d04-x01-y04
+ScaledBy=5.00000500000499998e-04
+Title=$\Delta\eta=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+1.000000e-03	3.000000e-03	2.509502e+00	3.542249e-02	3.542249e-02
+3.000000e-03	5.000000e-03	6.195005e-01	1.759973e-02	1.759973e-02
+5.000000e-03	7.000000e-03	2.630003e-01	1.146736e-02	1.146736e-02
+7.000000e-03	9.000000e-03	1.340002e-01	8.185360e-03	8.185360e-03
+9.000000e-03	1.100000e-02	7.650010e-02	6.184665e-03	6.184665e-03
+1.100000e-02	1.300000e-02	4.300004e-02	4.636814e-03	4.636814e-03
+1.300000e-02	1.500000e-02	2.550003e-02	3.570718e-03	3.570718e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/OPAL_1993_S2692198/d04-x01-y04
+IsRef=1
+LineColor=blue
+LineStyle=dotdashed
+LineWidth=1.3pt$
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/OPAL_1993_S2692198/d04-x01-y04
+ScaledBy=5.00000000000000010e-04
+Title=$\Delta\eta=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+1.000000e-03	3.000000e-03	2.545000e+00	3.567212e-02	3.567212e-02
+3.000000e-03	5.000000e-03	6.675000e-01	1.826883e-02	1.826883e-02
+5.000000e-03	7.000000e-03	2.895000e-01	1.203121e-02	1.203121e-02
+7.000000e-03	9.000000e-03	1.575000e-01	8.874120e-03	8.874120e-03
+9.000000e-03	1.100000e-02	8.950000e-02	6.689544e-03	6.689544e-03
+1.100000e-02	1.300000e-02	5.150000e-02	5.074446e-03	5.074446e-03
+1.300000e-02	1.500000e-02	2.700000e-02	3.674235e-03	3.674235e-03
+# END HISTO1D
+
