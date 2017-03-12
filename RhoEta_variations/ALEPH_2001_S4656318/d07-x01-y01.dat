@@ -1,0 +1,89 @@
+# BEGIN PLOT
+RatioPlotReference=/ALEPH_2001_S4656318/d07-x01-y01
+LegendOnly=/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/ALEPH_2001_S4656318/d07-x01-y01
+XLabel=
+ShowZero=0
+YLabel=$\langle x_B \rangle$
+DrawOnly=/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/ALEPH_2001_S4656318/d07-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/ALEPH_2001_S4656318/d07-x01-y01
+RatioPlot=1
+Title=Mean of $b$ quark fragmentation function $f(x_B^\text{weak})$
+Legend=1
+LogY=0
+# END PLOT
+
+# BEGIN HISTO1D /ALEPH_2001_S4656318/d07-x01-y01
+ConnectBins=0
+ErrorBars=1
+IsRef=1
+Path=/ALEPH_2001_S4656318/d07-x01-y01
+PolyMarker=*
+Title=Data
+# xlow	 xhigh	 val	 errminus	 errplus
+9.050000e+01	9.150000e+01	7.160000e-01	8.500000e-03	8.500000e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/ALEPH_2001_S4656318/d07-x01-y01
+IsRef=1
+LineColor=red
+LineStyle=solid
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/ALEPH_2001_S4656318/d07-x01-y01
+Title=nominal
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+9.050000e+01	9.150000e+01	7.189642e-01	1.881011e-04	1.881011e-04
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/ALEPH_2001_S4656318/d07-x01-y01
+IsRef=1
+LineColor=red
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/ALEPH_2001_S4656318/d07-x01-y01
+Title=$\Delta\rho=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+9.050000e+01	9.150000e+01	7.190225e-01	1.879234e-04	1.879234e-04
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/ALEPH_2001_S4656318/d07-x01-y01
+IsRef=1
+LineColor=red
+LineStyle=dotdashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/ALEPH_2001_S4656318/d07-x01-y01
+Title=$\Delta\rho=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+9.050000e+01	9.150000e+01	7.189920e-01	1.879035e-04	1.879035e-04
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/ALEPH_2001_S4656318/d07-x01-y01
+IsRef=1
+LineColor=blue
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/ALEPH_2001_S4656318/d07-x01-y01
+Title=$\Delta\eta=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+9.050000e+01	9.150000e+01	7.190436e-01	1.877349e-04	1.877349e-04
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/ALEPH_2001_S4656318/d07-x01-y01
+IsRef=1
+LineColor=blue
+LineStyle=dotdashed
+LineWidth=1.3pt$
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/ALEPH_2001_S4656318/d07-x01-y01
+Title=$\Delta\eta=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+9.050000e+01	9.150000e+01	7.193169e-01	1.877387e-04	1.877387e-04
+# END HISTO1D
+

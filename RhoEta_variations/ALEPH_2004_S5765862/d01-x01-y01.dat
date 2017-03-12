@@ -1,0 +1,94 @@
+# BEGIN PLOT
+LegendOnly=/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/ALEPH_2004_S5765862/d01-x01-y01
+DrawOnly=/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/ALEPH_2004_S5765862/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/ALEPH_2004_S5765862/d01-x01-y01
+Title=Charged multiplicity at a function of energy
+RatioPlotReference=/ALEPH_2004_S5765862/d01-x01-y01
+RatioPlot=1
+LogY=0
+LegendXPos=0.20
+XLabel=$E_\mathrm{CMS}/GeV$
+YLabel=$N_\text{ch}$
+YMin=18
+LegendYPos=0.85
+Legend=1
+# END PLOT
+
+# BEGIN HISTO1D /ALEPH_2004_S5765862/d01-x01-y01
+ConnectBins=0
+ErrorBars=1
+IsRef=1
+Path=/ALEPH_2004_S5765862/d01-x01-y01
+PolyMarker=*
+Title=Data
+# xlow	 xhigh	 val	 errminus	 errplus
+7.030000e+01	1.121000e+02	2.073000e+01	2.102380e-01	2.102380e-01
+1.121000e+02	1.470000e+02	2.434000e+01	4.390900e-01	4.390900e-01
+1.470000e+02	1.665000e+02	2.691000e+01	6.203225e-01	6.203225e-01
+1.665000e+02	1.775000e+02	2.672000e+01	6.578754e-01	6.578754e-01
+1.775000e+02	1.860000e+02	2.680000e+01	4.134005e-01	4.134005e-01
+1.860000e+02	1.925000e+02	2.735000e+01	3.111270e-01	3.111270e-01
+1.925000e+02	1.980000e+02	2.741000e+01	3.966106e-01	3.966106e-01
+1.980000e+02	2.030000e+02	2.753000e+01	3.640055e-01	3.640055e-01
+2.030000e+02	2.090000e+02	2.795000e+01	3.111270e-01	3.111270e-01
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/ALEPH_2004_S5765862/d01-x01-y01
+LineColor=red
+LineStyle=solid
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/ALEPH_2004_S5765862/d01-x01-y01
+Title=nominal
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+7.030000e+01	1.121000e+02	2.033068e+01	0.000000e+00	0.000000e+00
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/ALEPH_2004_S5765862/d01-x01-y01
+LineColor=red
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/ALEPH_2004_S5765862/d01-x01-y01
+Title=$\Delta\rho=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+7.030000e+01	1.121000e+02	2.022317e+01	0.000000e+00	0.000000e+00
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/ALEPH_2004_S5765862/d01-x01-y01
+LineColor=red
+LineStyle=dotdashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/ALEPH_2004_S5765862/d01-x01-y01
+Title=$\Delta\rho=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+7.030000e+01	1.121000e+02	2.042062e+01	0.000000e+00	0.000000e+00
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/ALEPH_2004_S5765862/d01-x01-y01
+LineColor=blue
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/ALEPH_2004_S5765862/d01-x01-y01
+Title=$\Delta\eta=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+7.030000e+01	1.121000e+02	2.035857e+01	0.000000e+00	0.000000e+00
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/ALEPH_2004_S5765862/d01-x01-y01
+LineColor=blue
+LineStyle=dotdashed
+LineWidth=1.3pt$
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/ALEPH_2004_S5765862/d01-x01-y01
+Title=$\Delta\eta=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+7.030000e+01	1.121000e+02	2.028970e+01	0.000000e+00	0.000000e+00
+# END HISTO1D
+

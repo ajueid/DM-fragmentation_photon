@@ -1,0 +1,105 @@
+# BEGIN PLOT
+LegendOnly=/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/DELPHI_1995_S3137023/d03-x01-y01
+DrawOnly=/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/DELPHI_1995_S3137023/d03-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/DELPHI_1995_S3137023/d03-x01-y01
+Title=$\Sigma^\pm(1385)$ scaled momentum
+RatioPlotReference=/DELPHI_1995_S3137023/d03-x01-y01
+RatioPlot=1
+LogY=1
+XLabel=$x_p$
+YLabel=$1/\sigma \, \text{d}\sigma/\text{d}x_p$
+Legend=1
+# END PLOT
+
+# BEGIN HISTO1D /DELPHI_1995_S3137023/d03-x01-y01
+ConnectBins=0
+ErrorBars=1
+IsRef=1
+Path=/DELPHI_1995_S3137023/d03-x01-y01
+PolyMarker=*
+Title=Data
+# xlow	 xhigh	 val	 errminus	 errplus
+5.000000e-02	1.000000e-01	2.240000e-01	4.071855e-02	4.071855e-02
+1.000000e-01	2.000000e-01	9.000000e-02	1.392839e-02	1.392839e-02
+2.000000e-01	3.000000e-01	3.800000e-02	1.118034e-02	1.118034e-02
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/DELPHI_1995_S3137023/d03-x01-y01
+IsRef=1
+LineColor=red
+LineStyle=solid
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/Monash.yoda/DELPHI_1995_S3137023/d03-x01-y01
+ScaledBy=4.99999999999999977e-07
+Title=nominal
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+5.000000e-02	1.000000e-01	2.557200e-01	1.599125e-03	1.599125e-03
+1.000000e-01	2.000000e-01	1.134500e-01	7.531600e-04	7.531600e-04
+2.000000e-01	3.000000e-01	5.060500e-02	5.030159e-04	5.030159e-04
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/DELPHI_1995_S3137023/d03-x01-y01
+IsRef=1
+LineColor=red
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoDown.yoda/DELPHI_1995_S3137023/d03-x01-y01
+ScaledBy=4.99999999999999977e-07
+Title=$\Delta\rho=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+5.000000e-02	1.000000e-01	2.585800e-01	1.608042e-03	1.608042e-03
+1.000000e-01	2.000000e-01	1.145900e-01	7.569346e-04	7.569346e-04
+2.000000e-01	3.000000e-01	5.041000e-02	5.020458e-04	5.020458e-04
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/DELPHI_1995_S3137023/d03-x01-y01
+IsRef=1
+LineColor=red
+LineStyle=dotdashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/RhoUp.yoda/DELPHI_1995_S3137023/d03-x01-y01
+ScaledBy=4.99999999999999977e-07
+Title=$\Delta\rho=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+5.000000e-02	1.000000e-01	2.523700e-01	1.588616e-03	1.588616e-03
+1.000000e-01	2.000000e-01	1.134000e-01	7.529940e-04	7.529940e-04
+2.000000e-01	3.000000e-01	4.986500e-02	4.993245e-04	4.993245e-04
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/DELPHI_1995_S3137023/d03-x01-y01
+IsRef=1
+LineColor=blue
+LineStyle=dashed
+LineWidth=1.3pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaDown.yoda/DELPHI_1995_S3137023/d03-x01-y01
+ScaledBy=5.00000500000500058e-07
+Title=$\Delta\eta=-10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+5.000000e-02	1.000000e-01	2.586502e-01	1.608262e-03	1.608262e-03
+1.000000e-01	2.000000e-01	1.145251e-01	7.567206e-04	7.567206e-04
+2.000000e-01	3.000000e-01	5.146505e-02	5.072726e-04	5.072726e-04
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/DELPHI_1995_S3137023/d03-x01-y01
+IsRef=1
+LineColor=blue
+LineStyle=dotdashed
+LineWidth=1.3pt$
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_events/EtaUp.yoda/DELPHI_1995_S3137023/d03-x01-y01
+ScaledBy=4.99999999999999977e-07
+Title=$\Delta\eta=+10\%$
+XLabel=
+YLabel=
+# xlow	 xhigh	 val	 errminus	 errplus
+5.000000e-02	1.000000e-01	2.552800e-01	1.597748e-03	1.597748e-03
+1.000000e-01	2.000000e-01	1.136300e-01	7.537573e-04	7.537573e-04
+2.000000e-01	3.000000e-01	5.057500e-02	5.028668e-04	5.028668e-04
+# END HISTO1D
+
