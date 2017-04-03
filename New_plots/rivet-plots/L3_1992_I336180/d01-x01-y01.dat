@@ -1,0 +1,96 @@
+# BEGIN PLOT
+LegendOnly=/L3_1992_I336180/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T1.yoda/L3_1992_I336180/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T2.yoda/L3_1992_I336180/d01-x01-y01
+DrawOnly=/L3_1992_I336180/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T1.yoda/L3_1992_I336180/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T2.yoda/L3_1992_I336180/d01-x01-y01
+Title=The $x_p$ spectrum for inclusive $\eta$ production at the $Z^0$ resonance
+RatioPlotReference=/L3_1992_I336180/d01-x01-y01
+RatioPlot=0
+LogY=1
+XLabel=$x_p=p/p_{\text{beam}}$
+YLabel=$1/\sigma_h \, \text{d}\sigma/\text{d}x_p$ [$\text{GeV}^-1$]
+Legend=1
+GofType=chi2
+GofReference=/L3_1992_I336180/d01-x01-y01
+GofLegend=1
+PlotSize=10,8
+RatioPlot1=1
+RatioPlot1DrawOnly=/L3_1992_I336180/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T1.yoda/L3_1992_I336180/d01-x01-y01
+RatioPlot1DrawReferenceFirst=0
+RatioPlot1Reference=/L3_1992_I336180/d01-x01-y01
+RatioPlot1SameStyle=1
+RatioPlot1YLabel=MC/data
+RatioPlot1YMajorTickMarks=20
+RatioPlot1YMax=1.4999
+RatioPlot1YMin=0.5001
+RatioPlot1YSize=3
+RatioPlot2=1
+RatioPlot2DrawOnly=/L3_1992_I336180/d01-x01-y01 //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T2.yoda/L3_1992_I336180/d01-x01-y01
+RatioPlot2DrawReferenceFirst=0
+RatioPlot2Reference=/L3_1992_I336180/d01-x01-y01
+RatioPlot2SameStyle=1
+RatioPlot2YLabel=MC/data
+RatioPlot2YMajorTickMarks=20
+RatioPlot2YMax=1.4999
+RatioPlot2YMin=0.5001
+RatioPlot2YSize=3
+# END PLOT
+
+# BEGIN HISTO1D /L3_1992_I336180/d01-x01-y01
+ConnectBins=0
+ErrorBars=1
+Path=/L3_1992_I336180/d01-x01-y01
+PolyMarker=*
+Title=Data
+# xlow	 xhigh	 val	 errminus	 errplus
+3.500000e-02	4.500000e-02	9.190000e+00	1.764766e+00	1.764766e+00
+4.500000e-02	6.500000e-02	6.480000e+00	1.238467e+00	1.238467e+00
+6.500000e-02	9.500000e-02	5.200000e+00	1.012571e+00	1.012571e+00
+9.500000e-02	1.350000e-01	3.300000e+00	6.762396e-01	6.762396e-01
+1.350000e-01	1.750000e-01	2.610000e+00	5.663921e-01	5.663921e-01
+1.750000e-01	2.250000e-01	1.260000e+00	3.252691e-01	3.252691e-01
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T1.yoda/L3_1992_I336180/d01-x01-y01
+ErrorBandColor=red
+ErrorBandOpacity=0.2
+ErrorBandStyle=hlines
+ErrorBands=1
+ErrorTubeLineColor=red!80!black
+ErrorTubeLineStyle=solid
+ErrorTubes=1
+ErrorType=env
+LineColor=red!80!black
+LineStyle=solid
+LineWidth=1.5pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T1.yoda/L3_1992_I336180/d01-x01-y01
+Title=\texttt{T1}
+# xlow	 xhigh	 val	 errminus	 errplus
+3.500000e-02	4.500000e-02	9.415346e+00	4.022690e-01	4.163640e-01
+4.500000e-02	6.500000e-02	6.777344e+00	2.566840e-01	2.636240e-01
+6.500000e-02	9.500000e-02	4.363619e+00	1.318690e-01	1.330900e-01
+9.500000e-02	1.350000e-01	2.585413e+00	5.796300e-02	5.652400e-02
+1.350000e-01	1.750000e-01	1.556671e+00	2.450900e-02	2.214300e-02
+1.750000e-01	2.250000e-01	9.654186e-01	7.544800e-03	5.051900e-03
+# END HISTO1D
+
+# BEGIN HISTO1D //media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T2.yoda/L3_1992_I336180/d01-x01-y01
+ErrorBandColor=blue!30!white
+ErrorBandOpacity=0.4
+ErrorBandStyle=hlines
+ErrorBands=1
+ErrorTubeLineColor=blue!50!white
+ErrorTubes=1
+ErrorType=env
+LineColor=blue!80!black
+LineStyle=solid
+LineWidth=1.5pt
+Path=//media/adil/70aa4125-8ea2-43be-afcf-88b43c0b7507/adil/Work/QCD_DM@LEP/New_plots/T2.yoda/L3_1992_I336180/d01-x01-y01
+Title=\texttt{T2}
+# xlow	 xhigh	 val	 errminus	 errplus
+3.500000e-02	4.500000e-02	9.268565e+00	2.359160e-01	5.827430e-01
+4.500000e-02	6.500000e-02	6.670759e+00	1.074040e-01	4.051540e-01
+6.500000e-02	9.500000e-02	4.301811e+00	3.457100e-02	2.186450e-01
+9.500000e-02	1.350000e-01	2.555824e+00	6.428000e-03	9.734500e-02
+1.350000e-01	1.750000e-01	1.543712e+00	0.000000e+00	4.151300e-02
+1.750000e-01	2.250000e-01	9.621291e-01	0.000000e+00	1.147810e-02
+# END HISTO1D
+
